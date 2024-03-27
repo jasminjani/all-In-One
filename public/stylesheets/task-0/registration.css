@@ -1,0 +1,42 @@
+body {
+    background-color: #002147;
+}
+
+#container {
+    height: 330px;
+    width: 400px;
+    margin: auto;
+    background-color: #c0e6fc;
+    /* border-radius: 10px;      */
+}
+
+.section {
+    margin-top: 50px;
+}
+
+form>div {
+    padding-top: 30px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.btn {
+    background-color: #002147;
+    color: white;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.red {
+    display: block;
+    color: red;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}

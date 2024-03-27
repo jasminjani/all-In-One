@@ -1,0 +1,12 @@
+th,td {
+    border:  1px solid black;
+    background-color: blanchedalmond;
+}
+
+.center {
+    text-align: center;
+}
+
+/* table {
+    border-collapse: collapse;
+} */

@@ -1,0 +1,43 @@
+body {
+    background-color: #002147;
+}
+
+th,
+td {
+    border: 1px solid black;
+    background-color: #c0e6fc;
+    text-align: center;
+    padding: 10px;
+}
+
+#div {
+    margin-bottom: 20px;
+    margin-left: 55px;
+}
+
+#input {
+    height: 35px;
+    width: 270px;
+}
+
+#go {
+    height: 41px;
+    width: 70px;
+    background-color: #00FFFF;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+

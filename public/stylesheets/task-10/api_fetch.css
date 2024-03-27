@@ -1,0 +1,31 @@
+body {
+    background-color: #002147;
+    color: white;
+}
+
+td,
+th {
+    border: 1px solid black;
+    background-color: #c0e6fc;
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+
+th {
+    background-color: #6d9ed2;
+}
+
+table {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#paging {
+    text-align: center;
+    margin: 30px 0;
+}

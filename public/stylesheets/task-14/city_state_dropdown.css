@@ -1,0 +1,21 @@
+body {
+    background-color: #002147;
+}
+
+h1,h3{
+    color: white;
+    text-align: center;
+}
+
+#container {
+    background-color: #c0e6fc;
+    height: 300px;
+    width: 50%;
+    margin: 9% 25%;
+    
+}
+
+.display {
+    padding-top: 70px;
+    margin-left: 25%;
+}

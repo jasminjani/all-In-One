@@ -1,0 +1,35 @@
+body {
+    background-color: rgb(227, 255, 255);
+}
+
+td,th {
+    border: 1px solid black;
+    background-color: bisque;
+    padding: 5px;
+}
+
+form {
+    margin: 10px;
+    margin-left: 110px;
+}
+
+input, select {
+    /* border-radius: 3px; */
+    height: 27px;
+    margin: 10px;
+}
+
+table {
+    text-align: center;
+    margin-left: 110px;
+}
+
+select {
+    height: 35px;
+    width: 70px;
+}
+
+#go {
+    height: 35px;
+    width: 70px;
+}

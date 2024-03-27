@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert and Update in job app</title>
+    <link rel="stylesheet" href="/stylesheets/task-9/job_app_validation.css">
+
+</head>
+
+<body>
+
+    <% var data = data || null %>
+    <% var data2 = data2 || null %>
+    <% var data3 = data3 || null %>
+    <% var data4 = data4 || null %>
+    <% var data5 = data5 || null %>
+    <% var data6 = data6 || null %>
+    <% var data7 = data7 || null %>
+
+    <form onsubmit="return form_validation()" method="post">
+
+
+        <input type="hidden" <% if (data) {  if (data[0]) { %> value="<%= data[0].person_id %>" <% } } %> >
+    
+        <fieldset style="width: 70%;">
+            <legend>Basic detail</legend>
+
+            <table>
+
+                <tr>
+                    <td>
+                        <label for="first_name">First name</label>
+                        <input type="text" name="first_name" id="first_name" <% if (data) {  if (data[0]) { %> value="<%= data[0].first_name %>" <% } } %> >
+                    <td id="first_name_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 5%;">
+                        <label for="last_name">last name </label>
+                        <input type="text" name="last_name" id="last_name" <% if (data) {  if (data[0]) { %> value="<%= data[0].last_name%>" <% } } %> >
+                    <td id="last_name_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="designation">Designation </label>
+                        <input type="text" name="designation" id="designation" <% if (data) {  if (data[0]) { %> value="<%= data[0].designation %>" <% } } %> > 
+                    <td id="designation_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 4%;">
+                        <label for="address_1">Address 1 </label>
+                        <input type="text" name="address_1" id="address_1" <% if (data) {  if (data[0]) { %> value="<%= data[0].address_1 %>" <% } } %> >
+                    <td id="address_1_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="email">Email </label>
+                        <input type="text" name="email" id="email" <% if (data) {  if (data[0]) { %> value="<%= data[0].email %>" <% } } %> >
+                    <td id="email_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 9%;">
+                        <label for="address_2">Address 2 </label>
+                        <input type="text" name="address_2" id="address_2" <% if (data) {  if (data[0]) { %> value="<%= data[0].address_2 %>" <% } } %> >
+                    <td id="address_2_validation" class="red"></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="phone_no">Phone Number </label>
+                        <input type="text" name="phone_no" id="phone_no" <% if (data) {  if (data[0]) { %> value="<%= data[0].phone_no %>" <% } } %> >
+                    <td id="phone_no_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 5%;">
+                        <label for="city">city </label>
+                        <input type="text" name="city" id="city" <% if (data) {  if (data[0]) { %> value="<%= data[0].city %>" <% } } %> >
+                    <td id="city_validation" class="red"></td>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        Gender
+                        <label for="male">male </label>
+                        <input type="radio" name="gender" id="male" value="m" <% if (data) { if (data[0]) { if (data[0].gender == 'm') {%> checked   <% } } } %>>
+                        <label for="female">Female </label>
+                        <input type="radio" name="gender" id="female" value="f" <% if (data) { if (data[0]) {  if (data[0].gender == 'f') {%> checked   <% } } } %>>
+                    <td id="gender_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 10%;">
+                        <label for="state">State </label>
+                        <select name="state" id="state">
+                            <option value="select_state">select state</option>
+                            <option value="gujrat" <% if (data) {  if (data[0]) {  if (data[0].state == 'gujrat') {%> selected <% } } } %>>gujrat</option>
+                            <option value="maharashtra" <% if (data) {  if (data[0]) {  if (data[0].state == 'maharashtra') {%> selected <% } } } %>>maharashtra</option>
+                            <option value="west bengal" <% if (data) {  if (data[0]) {  if (data[0].state == 'west bengal') {%> selected <% } } } %>>west bengal</option>
+                            <option value="karnataka" <% if (data) {  if (data[0]) {  if (data[0].state == 'karnataka') {%> selected <% } } } %>>karnataka</option>
+                            <option value="uttrakhand" <% if (data) {  if (data[0]) {  if (data[0].state == 'uttrakhand') {%> selected <% } } } %>>uttrakhand </option>
+                            <option value="jammu kashmir" <% if (data) {  if (data[0]) {  if (data[0].state == 'jammu kashmir') {%> selected <% } } } %>>jammu kashmir </option>
+                            <option value="rajasthan" <% if (data) {  if (data[0]) {  if (data[0].state == 'rajasthan') {%> selected <% } } } %>>rajasthan </option>
+                            <option value="madhyapradesh" <% if (data) {  if (data[0]) {  if (data[0].state == 'madhyapradesh') {%> selected <% } } } %>>madhyapradesh </option>
+                        </select>
+                    <td id="state_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label for="relationship_status">Relationship Status </label>
+                        <select name="relationship_status" id="relationship_status">
+                            <option value="select_relationship_status">select status</option>
+                            <option value="single" <% if (data) {  if (data[0]) {  if (data[0].relationship_status == 'single') {%> selected <% } } } %>>single</option>
+                            <option value="married" <% if (data) {  if (data[0]) {  if (data[0].relationship_status == 'married') {%> selected <% } } } %>>married</option>
+                            <option value="divorce" <% if (data) {  if (data[0]) {  if (data[0].relationship_status == 'divorce') {%> selected <% } } } %>>divorce</option>
+                        </select>
+                    <td id="relationship_status_validation" class="red"></td>
+                    </td>
+
+                    <td style="margin-left: 9%;">
+                        <label for="zipcode">Zip code </label>
+                        <input type="text" name="zipcode" id="zipcode" <% if (data) {  if (data[0]) { %> value="<%= data[0].zipcode %>" <% } } %> >
+                    <td id="zipcode_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>
+                        <label for="dob">Date Of Birth</label>
+                        <input type="text" name="dob" id="dob" <% if (data) {  if (data[0]) { %> value="<%= data[0].dob %>" <% } } %> >
+                    <td id="dob_validation" class="red"></td>
+                    </td>
+                </tr>
+                                    
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset style="width: 90%;">
+            <legend>Education Detail</legend>
+
+            <table>
+
+                <tr>
+                    <td>
+                        SSC result
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board_or_university_1">Name Of board</label>
+                        <select name="board_or_university" id="board_or_university_1">
+                            <option value="select_ssc">select board</option>
+                            <option value="gseb" <% if (data2) {  if (data2[0]) {  if (data2[0].board_or_university == 'gseb') {%> selected <% } } } %>>GSEB</option>
+                            <option value="icse" <% if (data2) {  if (data2[0]) {  if (data2[0].board_or_university == 'icse') {%> selected <% } } } %>>ICSE</option>
+                            <option value="cbse" <% if (data2) {  if (data2[0]) {  if (data2[0].board_or_university == 'cbse') {%> selected <%} } } %>>CBSE</option>
+                        </select>
+                    <td id="board_or_university_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="passing_year_1">Passing year</label>
+                        <input type="text" name="passing_year" id="passing_year_1"<% if (data2) {  if (data2[0]) { %> value="<%= data2[0].passing_year %>" <% } } %> >
+                    <td id="passing_year_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="percentage_1">Percentage</label>
+                        <input type="text" name="percentage" id="percentage_1" <% if (data2) {  if (data2[0]) { %> value="<%= data2[0].percentage %>" <% } } %> >
+                    <td id="percentage_1_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6">
+                        <hr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        HSC/Diploma Result
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board_or_university_2">Name Of board</label>
+                        <select name="board_or_university" id="board_or_university_2">
+                            <option value="select_hsc">select board</option>
+                            <option value="gsheb" <% if (data2) {  if (data2[1]) {  if (data2[1].board_or_university == 'gsheb') {%> selected <% } } } %>>GSHEB</option>
+                            <option value="icse" <% if (data2) {  if (data2[1]) {  if (data2[1].board_or_university == 'icse') {%> selected <% } } } %>>ICSE</option>
+                            <option value="cbse" <% if (data2) {  if (data2[1]) {  if (data2[1].board_or_university == 'cbse') {%> selected <% } } }  %>>CBSE</option>
+                            <option value="diploma" <% if (data2) {  if (data2[1]) {  if (data2[1].board_or_university == 'diploma') {%> selected <%} } } %>>Diploma</option>
+                        </select>
+                    <td id="board_or_university_2_validation" class="red"></td>
+                    </td>
+                    <td>
+                        <label for="passing_year_2">Passing year</label>
+                        <input type="text" name="passing_year" id="passing_year_2" <% if (data2) {  if (data2[1]) { %> value="<%= data2[1].passing_year %>" <% } } %> >
+                    <td id="passing_year_2_validation" class="red"></td>
+                    </td>
+                    <td>
+                        <label for="percentage_2">Percentage</label>
+                        <input type="text" name="percentage" id="percentage_2" <% if (data2) {  if (data2[1]) { %> value="<%= data2[1].percentage %>" <% } } %> >
+                    <td id="percentage_2_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6">
+                        <hr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        bachelor degree
+                    </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <label for="board_or_university_3">Course name</label>
+                        <select name="board_or_university" id="board_or_university_3">
+                            <option value="select_bachlor">select course</option>
+                            <option value="be"  <% if (data2) {  if (data2[2]) {  if (data2[2].board_or_university == 'be') {%> selected <% } } } %>>B.E.</option>
+                            <option value="b.tech"  <%  if (data2) {  if (data2[2]) {  if (data2[2].board_or_university == 'b.tech') {%> selected <% } } } %>>B.Tech</option>
+                            <option value="bca"  <%  if (data2) {  if (data2[2]) {  if (data2[2].board_or_university == 'bca') {%> selected <% } } } %>>BCA</option>
+                            <option value="bsc"  <%  if (data2) {  if (data2[2]) {  if (data2[2].board_or_university == 'bsc') {%> selected <% } } } %>>BSC</option>
+                        </select>
+                    <td id="board_or_university_3_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="passing_year_3">Passing year</label>
+                        <input type="text" name="passing_year" id="passing_year_3" <% if (data2) {  if (data2[2]) { %> value="<%= data2[2].passing_year %>" <% } } %> >
+                    <td id="passing_year_3_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="percentage_3">Percentage</label>
+                        <input type="text" name="percentage" id="percentage_3" <% if (data2) {  if (data2[2]) { %> value="<%= data2[2].percentage %>" <% } } %> >
+                    <td id="percentage_3_validation" class="red"></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        <hr>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Master Degree
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="board_or_university_4">Course name</label>
+                        <select name="board_or_university" id="board_or_university_4">
+                            <option value="select_master">select course</option>
+                            <option value="me" <% if (data2) {  if (data2[3]) {  if (data2[3].board_or_university == 'me') {%> selected <% } } } %>>M.E.</option>
+                            <option value="m.tech" <% if (data2) {  if (data2[3]) {  if (data2[3].board_or_university == 'm.tech') {%> selected <% } } } %>>M.Tech</option>
+                            <option value="mca" <% if (data2) {  if (data2[3]) {  if (data2[3].board_or_university == 'mca') {%> selected <% } } } %>>MCA</option>
+                            <option value="mba" <% if (data2) {  if (data2[3]) {  if (data2[3].board_or_university == 'mba') {%> selected <% } } } %>>MBA</option>
+                        </select>
+                    <td id="board_or_university_4_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="passing_year_4">Passing year</label>
+                        <input type="text" name="passing_year" id="passing_year_4" <% if (data2) {  if (data2[3]) { %> value="<%= data2[3].passing_year %>" <% } } %> >
+                    <td id="passing_year_4_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="percentage_4">Percentage</label>
+                        <input type="text" name="percentage" id="percentage_4" <% if (data2) {  if (data2[3]) { %> value="<%= data2[3].percentage %>" <% } } %> >
+                    <td id="percentage_4_validation" class="red"></td>
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset style="width: 95%;">
+            <legend>Work Experience</legend>
+
+            <table id="work_exp_table">
+
+                
+                <tr>
+
+                    <input type="hidden" name="work_id" <% if (data3) {  if (data3[0]) { %> value="<%= data3[0].work_id %>" <% } } %> >
+
+                    <td>
+                        <label for="company_name_1">Company name</label>
+                        <input type="text" name="company_name" id="company_name_1" <% if (data3) {  if (data3[0]) { %> value="<%= data3[0].company_name %>" <% } } %> >
+                    <td id="company_name_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="past_designation_1">Designation</label>
+                        <input type="text" name="past_designation" id="past_designation_1" <% if (data3) {  if (data3[0]) { %> value="<%= data3[0].past_designation %>" <% } } %> >
+                    <td id="past_designation_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="start_date_1">From</label>
+                        <input type="text" name="start_date" id="start_date_1" <% if (data3) {  if (data3[0]) { %> value="<%= data3[0].start_date %>" <% } } %> >
+                    <td id="start_date_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="end_date_1">To</label>
+                        <input type="text" name="end_date" id="end_date_1" <% if (data3) {  if (data3[0]) { %> value="<%= data3[0].end_date %>" <% } } %> >
+                    <td id="end_date_1_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <input type="hidden" name="work_id" <% if (data3) {  if (data3[1]) { %> value="<%= data3[1].work_id %>" <% } } %> >
+
+                    <td>
+                        <label for="company_name_2">Company name</label>
+                        <input type="text" name="company_name" id="company_name_2" <% if (data3) {  if (data3[1]) { %> value="<%= data3[1].company_name %>" <% } } %> >
+                    <td id="company_name_2_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="past_designation_2">Designation</label>
+                        <input type="text" name="past_designation" id="past_designation_2" <% if (data3) {  if (data3[1]) { %> value="<%= data3[1].past_designation %>" <% } } %> >
+                    <td id="past_designation_2_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="start_date_2">From</label>
+                        <input type="text" name="start_date" id="start_date_2" <% if (data3) {  if (data3[1]) { %> value="<%= data3[1].start_date %>" <% } } %> >
+                    <td id="start_date_2_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="end_date_2">To</label>
+                        <input type="text" name="end_date" id="end_date_2" <% if (data3) {  if (data3[1]) { %> value="<%= data3[1].end_date %>" <% } } %> >
+                    <td id="end_date_2_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <input type="hidden" name="work_id" <% if (data3) {  if (data3[2]) { %> value="<%= data3[2].work_id %>" <% } } %> >
+
+                    <td>
+                        <label for="company_name_3">Company name</label>
+                        <input type="text" name="company_name" id="company_name_3" <% if (data3) {  if (data3[2]) { %> value="<%= data3[2].company_name %>" <% } } %> >
+                    <td id="company_name_3_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="past_designation_3">Designation</label>
+                        <input type="text" name="past_designation" id="past_designation_3" <% if (data3) {  if (data3[2]) { %> value="<%= data3[2].past_designation %>" <% } } %> >
+                    <td id="past_designation_3_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="start_date_3">From</label>
+                        <input type="text" name="start_date" id="start_date_3" <% if (data3) {  if (data3[2]) { %> value="<%= data3[2].start_date %>" <% } } %> >
+                    <td id="start_date_3_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="end_date_3">To</label>
+                        <input type="text" name="end_date" id="end_date_3" <% if (data3) {  if (data3[2]) { %> value="<%= data3[2].end_date %>" <% } } %> >
+                    <td id="end_date_3_validation" class="red"></td>
+                    </td>
+                </tr>
+
+                <input type="button" value="+" name="create_experience" id="create_experience" onclick="add_work_exp()">
+            <input type="button" value="-" name="remove_experience" id="remove_experience" onclick="remove_work_exp()">
+
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset style="width: 35%;margin-right: 1%;">
+            <legend>Language known</legend>
+
+            <% var english = null;
+               var gujarati = null;
+               var hindi = null;
+
+            if (data7) {
+                data7.forEach(element => { 
+                    if (element.launguage_name == 'english') {
+                        english = element.level;
+                    } else if (element.launguage_name == 'gujarati') {
+                        gujarati = element.level;
+                    } else if (element.launguage_name == 'hindi') {
+                        hindi = element.level;
+                    }
+                }); 
+            }%>
+
+
+            <table>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="launguage_name" id="launguage_name_1" value="hindi" <% if (hindi) { %> checked <% } %>>
+                        <label for="launguage_name_1">Hindi</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_hindi" id="lan_read_1" value="read" <%if (hindi) { if (hindi.includes('read')) { %> checked <% } } %>>
+                        <label for="lan_read_1">read</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_hindi" id="lan_write_1" value="write" <%if (hindi) { if (hindi.includes('write')) { %> checked <% } } %>>
+                        <label for="lan_write_1">Write</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_hindi" id="lan_speak_1" value="speak" <%if (hindi) { if (hindi.includes('speak')) { %> checked <% } } %>>
+                        <label for="lan_speak_1">Speak</label>
+                    </td>
+                    <td id="lan_hindi_validation" class="red"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="launguage_name" id="launguage_name_2" value="english" <% if (english) { %> checked <% } %>>
+                        <label for="launguage_name_2">English</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_english" id="lan_read_2" value="read" <% if (english) { if (english.includes('read')) { %> checked <% } } %>>
+                        <label for="lan_read_2">read</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_english" id="lan_write_2" value="write" <% if (english) { if (english.includes('write')) { %> checked <% } } %>>
+                        <label for="lan_write_2">Write</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_english" id="lan_speak_2" value="speak" <% if (english) { if (english.includes('speak')) { %> checked <% } } %>>
+                        <label for="lan_speak_2">Speak</label>
+                    </td>
+                    <td id="lan_english_validation" class="red"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="launguage_name" id="launguage_name_3" value="gujarati" <% if (gujarati) { %> checked <% } %>>
+                        <label for="launguage_name_3">Gujarati</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_gujarati" id="lan_read_3" value="read" <% if (gujarati) { if (gujarati.includes('read')) { %> checked <% } } %>>
+                        <label for="lan_read_3">read</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_gujarati" id="lan_write_3" value="write" <% if (gujarati) { if (gujarati.includes('write')) { %> checked <% } } %>>
+                        <label for="lan_write_3">Write</label>
+                    </td>
+
+                    <td>
+                        <input type="checkbox" name="lan_gujarati" id="lan_speak_3" value="speak" <% if (gujarati) { if (gujarati.includes('speak')) { %> checked <% } } %>>
+                        <label for="lan_speak_3">Speak</label>
+                    </td>
+                    <td id="lan_gujarati_validation" class="red"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset style="width: 39%;">
+            <legend>Technologies you know</legend>
+
+            <table>
+
+                <% var tech_id = [];
+                var php;
+                var php_tech_id;
+                var mysql;
+                var mysql_tech_id;
+                var laravel;
+                var laravel_tech_id;
+                var oracle;
+                var oracle_tech_id;
+
+                if (data6) {
+                    for(let i =0; i < data6.length; i++) {
+                        if (data6[i].technology_name == 'php') {
+                             php = data6[i].tech_stage;
+                             php_tech_id = data6[i].tech_id;
+                        } else if (data6[i].technology_name == 'mysql') {
+                             mysql = data6[i].tech_stage;
+                             mysql_tech_id = data6[i].tech_id;
+                        } else if (data6[i].technology_name == 'laravel') {
+                             laravel = data6[i].tech_stage;
+                             laravel_tech_id = data6[i].tech_id;
+                        } else if (data6[i].technology_name == 'oracle') {
+                             oracle = data6[i].tech_stage;
+                             oracle_tech_id = data6[i].tech_id;
+                        } 
+                    } }  %>
+
+                    <% if(php_tech_id) {tech_id.push(php_tech_id); }
+                       if (mysql_tech_id) {tech_id.push(mysql_tech_id); }
+                       if (laravel_tech_id) { tech_id.push(laravel_tech_id); }
+                       if (oracle_tech_id) { tech_id.push(oracle_tech_id); } %>
+
+
+                <tr>
+                    <td>
+
+                        <input type="hidden" name="tech_id"  <% if (tech_id) { %> value="<%= tech_id %>" <% } %> >
+                        <input type="checkbox" name="technology_name" id="technology_name_1" value="php"  <% if (php) {%> checked <% } %>>
+                        <label for="technology_name_1">PHP</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_1" id="Beginer_1" value="beginer" <%  if (php) { if (php == 'beginer') {%> checked <% } } %>> 
+                        <label for="Beginer_1" >Beginer</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_1" id="Mideator_1" value="mideator" <%  if (php) { if (php == 'mideator') {%> checked <% } } %>>
+                        <label for="Mideator_1" >Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_1" id="Expert_1" value="expert" <%  if (php) { if (php == 'expert') {%> checked <% } } %>>
+                        <label for="Expert_1" >Expert</label>
+                    </td>
+                    <td id="tech_stage_1_validation" class="red"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="technology_name" id="technology_name_2" value="mysql" <% if (mysql) {%> checked <% } %>>
+                        <label for="technology_name_2">MYSQL</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_2" id="Beginer_2" value="beginer" <% if (mysql) { if (mysql == 'beginer') {%> checked <% } } %>>
+                        <label for="Beginer_2">Beginer</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_2" id="Mideator_2" value="mideator" <% if (mysql) { if (mysql == 'mideator') {%> checked <% } } %>>
+                        <label for="Mideator_2">Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_2" id="Expert_2" value="expert" <% if (mysql) { if (mysql == 'expert') {%> checked <% } } %>>
+                        <label for="Expert_2">Expert</label>
+                    </td>
+                    <td id="tech_stage_2_validation" class="red"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="technology_name" id="technology_name_3" value="laravel" <% if (laravel) {%> checked <% } %>>
+                        <label for="technology_name_3">laravel</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_3" id="Beginer_3" value="beginer" <% if (laravel) { if (laravel == 'beginer') {%> checked <% } } %>>
+                        <label for="Beginer_3">Beginer</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_3" id="Mideator_3" value="mideator" <% if (laravel) { if (laravel == 'mideator') {%> checked <% } } %>>
+                        <label for="Mideator_3">Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_3" id="Expert_3" value="expert" <% if (laravel) { if (laravel == 'expert') {%> checked <% } } %>>
+                        <label for="Expert_3">Expert</label>
+                    </td>
+                    <td id="tech_stage_3_validation" class="red"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="technology_name" id="technology_name_4" value="oracle" <% if (oracle) {%> checked <% } %>>
+                        <label for="technology_name_4">oracle</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_4" id="Beginer_4" value="beginer" <% if (oracle) { if (oracle == 'beginer') {%> checked <% } } %>>
+                        <label for="Beginer_4">Beginer</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_4" id="Mideator_4" value="mideator" <% if (oracle) { if (oracle == 'mideator') {%> checked <% } } %>>
+                        <label for="Mideator_4">Mideator</label>
+                    </td>
+
+                    <td>
+                        <input type="radio" name="tech_stage_4" id="Expert_4" value="expert" <% if (oracle) { if (oracle == 'expert') {%> checked <% } } %>>
+                        <label for="Expert_4">Expert</label>
+                    </td>
+                    <td id="tech_stage_4_validation" class="red"></td>
+                </tr>
+                
+            </table>
+        </fieldset>
+
+        <br>
+
+        <fieldset style="width: 85%;">
+            <legend>Reference Contact</legend>
+
+            <table>
+                <tr>
+
+                    <input type="hidden" name="reference_id" <% if (data4) { if (data4[0]) { %> value="<%= data4[0].reference_id %>" <% } } %> >
+
+                    <td>
+                        <label for="ref_name_1">Name</label>
+                        <input type="text" name="ref_name" id="ref_name_1" <% if (data4) { if (data4[0]) { %> value="<%= data4[0].ref_name %>" <% } } %> >
+                    <td id="ref_name_1_validation" class="red"></td>
+
+                    </td>
+
+                    <td>
+                        <label for="ref_phone_no_1">Contact Number</label>
+                        <input type="text" name="ref_phone_no" id="ref_phone_no_1" <% if (data4) { if (data4[0]) { %>  value="<%= data4[0].ref_phone_no %>" <% } } %> >
+                    <td id="ref_phone_no_1_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="ref_relation_1">Relation</label>
+                        <input type="text" name="ref_relation" id="ref_relation_1" <% if (data4) { if (data4[0]) { %>  value="<%= data4[0].ref_relation %>" <% } } %> >
+                    <td id="ref_relation_1_validation" class="red"></td>
+                    </td>
+                </tr>
+
+
+                <tr>
+
+                    <input type="hidden" name="reference_id" <% if (data4) { if (data4[1]) { %> value="<%= data4[1].reference_id %>" <% } } %> >
+
+                    <td>
+                        <label for="ref_name_2">Name</label>
+                        <input type="text" name="ref_name" id="ref_name_2" <% if (data4) { if (data4[1]) { %> value="<%= data4[1].ref_name %>" <% } } %> >
+                    <td id="ref_name_2_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="ref_phone_no_2">Contact Number</label>
+                        <input type="text" name="ref_phone_no" id="ref_phone_no_2" <% if (data4) { if (data4[1]) { %>  value="<%= data4[1].ref_phone_no %>" <% } } %> >
+                    <td id="ref_phone_no_2_validation" class="red"></td>
+                    </td>
+
+                    <td>
+                        <label for="ref_relation_2">Relation</label>
+                        <input type="text" name="ref_relation" id="ref_relation_2" <% if (data4) { if (data4[1]) { %>  value="<%= data4[1].ref_relation %>" <% } } %> >
+                    <td id="ref_relation_2_validation" class="red"></td>
+                    </td>
+                </tr>
+
+            </table>
+        </fieldset>
+
+
+        <br>
+
+<fieldset style="width: 85%;">
+    <legend>Preferances</legend>
+
+    <table>
+
+        <tr style="display: flex; flex-direction: row;">
+
+            <input type="hidden" name="preference_id" <% if (data5) { if (data5[0]) { %> value="<%= data5[0].preference_id %>" <% } } %> >
+
+            <td style="margin-right: 1%;">
+                <label for="location">Prefered Location</label>
+                <select name="location_1" id="location" multiple>
+                    <option value="ahmedabad" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'ahmedabad' || data5[0].location_2 == 'ahmedabad' || data5[0].location_3 == 'ahmedabad') { %> selected <% } } } %>>ahmedabad</option>
+                    <option value="ganhinagar" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'ganhinagar' || data5[0].location_2 == 'ganhinagar' || data5[0].location_3 == 'ganhinagar') { %> selected <% } } } %>>ganhinagar</option>
+                    <option value="surat" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'surat' || data5[0].location_2 == 'surat' || data5[0].location_3 == 'surat') { %> selected <% } } } %>>surat</option>
+                    <option value="baroda" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'baroda' || data5[0].location_2 == 'baroda' || data5[0].location_3 == 'baroda') { %> selected <% } } } %>>baroda</option>
+                    <option value="rajkot" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'rajkot' || data5[0].location_2 == 'rajkot' || data5[0].location_3 == 'rajkot') { %> selected <% } } } %>>rajkot </option>
+                    <option value="junagadh" <% if (data5) { if (data5[0]) { if (data5[0].location_1 == 'junagadh' || data5[0].location_2 == 'junagadh' || data5[0].location_3 == 'junagadh') {%> selected <% } } } %>>junagadh </option>
+                </select>
+
+
+            </td>
+
+            <td style="display: flex; flex-direction: column;">
+
+            <td>
+                <label for="notice_period_in_month">Notice period</label>
+                <input type="text" name="notice_period_in_month" id="notice_period_in_month" <% if (data5) { if (data5[0]) { %> value="<%= data5[0].notice_period_in_month %>" <% } } %> >
+            <td id="notice_period_in_month_validation" class="red"></td>
+            </td>
+
+            <td>
+                <label for="expected_ctc">Expected CTC</label>
+                <input type="text" name="expected_ctc" id="expected_ctc" <% if (data5) { if (data5[0]) { %> value="<%= data5[0].expected_ctc %>" <% } } %>>
+            <td id="expected_ctc_validation" class="red"></td>
+            </td>
+
+            <td>
+                <label for="current_ctc">Current CTC</label>
+                <input type="text" name="current_ctc" id="current_ctc" <% if (data5) { if (data5[0]) { %> value="<%= data5[0].current_ctc %>" <% } } %>>
+            <td id="current_ctc_validation" class="red"></td>
+            </td>
+            </td>
+
+            <td style="margin-left: 1%;">
+                <label for="department">Department</label>
+                <select name="department" id="department">
+                    <option value="select_department">select department</option>
+                    <option value="development" <% if (data5) { if (data5[0]) { if (data5[0].department == 'development') {%> selected <% } } } %>>development</option>
+                    <option value="design"  <% if (data5) { if (data5[0]) { if (data5[0].department == 'design') { %> selected <% } } } %>  >design</option>
+                    <option value="marketing"  <% if (data5) { if (data5[0]) { if (data5[0].department == 'marketing') { %> selected <% } } } %>  >marketing</option>
+                </select>
+            <td id="department_validation" class="red"></td>
+            </td>
+
+        </tr>
+    </table>
+</fieldset>
+
+
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+
+</body>
+
+
+
+<script src="/javascripts/task-9/job_app_validation_script.js"></script>
+
+
+</html>

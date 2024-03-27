@@ -1,0 +1,28 @@
+td,th {
+    margin: 0;
+    border:  1px solid ;
+    background-color: darkseagreen;
+}
+
+th {
+    cursor: pointer;
+}
+
+.center{
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    /* justify-content: space-between; */
+}
+
+.btn {
+    margin-left: 100px;
+}
+
+.clicked {
+    color: red  ;
+}
+
+

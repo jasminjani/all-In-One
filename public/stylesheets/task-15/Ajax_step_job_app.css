@@ -1,0 +1,11 @@
+body {
+    background-color: rgb(62, 111, 160);
+}
+
+.center {
+    text-align: center;
+}
+
+.red {
+    color: rgb(72, 255, 0);
+}

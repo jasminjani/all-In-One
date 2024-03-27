@@ -1,0 +1,41 @@
+body {
+    background-color: #002147;
+}
+
+h1,h3{
+    color: white;
+    text-align: center;
+}
+
+#container {
+    background-color: #c0e6fc;
+    /* text-align: center; */
+    /* justify-content: center; */
+    height: 300px;
+    width: 50%;
+    margin: 9% 25%;
+    
+}
+
+#converter {
+    background-color: #002147;
+    color: white;
+    padding: 5px;
+}
+
+.display {
+    padding-top: 40px;
+    margin-left: 25%;
+}
+
+#time_input {
+    margin-bottom: 40px;
+}
+
+#time_output {
+    background-color: white;
+    margin: 0 25%;
+    height: 10%;
+    text-align: center;
+    padding: 10px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/stylesheets/task-7/delimeter_search.css">
+</head>
+
+<body>
+
+    <div id="form">
+
+        <form action="/task_7">
+
+            <div id="div">
+                <input type="text" name="input" id="input" value="<%= input %>">
+                <input type="submit" value="Go" id="go">
+            </div>
+
+            <table id="deltable">
+                <tr>
+                    <td>first_name</td>
+                    <td>last_name</td>
+                    <td>email</td>
+                    <td>dob</td>
+                    <td>phone_no</td>
+                    <td>city</td>
+                </tr>
+
+                <tr>
+                    <td>_</td>
+                    <td>^</td>
+                    <td>$</td>
+                    <td>}</td>
+                    <td>{</td>
+                    <td>:</td>
+                </tr>
+            </table>
+
+        </form>
+
+    </div>
+
+
+    <table>
+
+        <tr>
+            <th>index</th>
+            <th>First Name</th>
+            <th>Last name</th>
+            <th>email</th>
+            <th>Age</th>
+            <th>phone no</th>
+            <th>City</th>
+        </tr>
+
+        <% data.forEach(function(item) { %>
+            <tr>
+                <td>
+                    <%= item.s_id %>
+                </td>
+                <td>
+                    <%= item.first_name %>
+                </td>
+                <td>
+                    <%= item.last_name %>
+                </td>
+                <td>
+                    <%= item.email %>
+                </td>
+                <td>
+                    <%= item.dob %>
+                </td>
+                <td>
+                    <%= item.phone_no %>
+                </td>
+                <td>
+                    <%= item.city %>
+                </td>
+            </tr>
+            <% }); %>
+
+    </table>
+
+</body>
+
+</html>

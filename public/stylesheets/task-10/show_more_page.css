@@ -1,0 +1,17 @@
+body {
+    background-color: #002147;
+    color: white;
+}
+
+td {
+    border: 1px solid black;
+    background-color: #c0e6fc;
+    text-align: center;
+    padding: 10px;
+    color: black;
+}
+/* 
+table {
+    border-collapse: collapse;
+    margin: auto;
+} */

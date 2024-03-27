@@ -1,0 +1,26 @@
+body {
+    background-color: #002147;
+    color: white;
+}
+
+.div {
+    height: 30px;
+    width: 350px;
+    background-color: #c0e6fc;
+    height: 35px;
+    width: 350px;
+    background-color: #c0e6fc;
+    text-align: center;
+    margin: auto;
+    margin-top: 5px;
+    padding-top: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1, h3 {
+    text-align: center;
+}

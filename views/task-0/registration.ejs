@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <link rel="stylesheet" href="/stylesheets/task-0/registration.css">
+</head>
+
+<body>
+
+    <h1>Registration</h1>
+
+    <div id="container">
+
+        <div class="section">
+
+            <form id="form">
+
+                <div>
+                    <label for="first_name">First name</label>
+                    <input type="text" name="first_name" id="first_name">
+                    <span class="red" id="first_name_validation"></span>
+
+                </div>
+
+                <div>
+                    <label for="last_name">Last name</label>
+                    <input type="text" name="last_name" id="last_name">
+                    <span class="red" id="last_name_validation"></span>
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="xyz@pqr.com">
+                    <span class="red" id="email_validation"></span>
+                </div>
+
+                <div>
+                    <label for="phone_no">Phone no.</label>
+                    <input type="text" name="phone_no" id="phone_no">
+                    <span class="red" id="phone_no_validation"></span>
+                </div>
+
+                <div>
+                </div>
+
+                <div>
+                    <span class="btn" value="register" id="register" onclick="fetch_data()">Register </span>
+                </div>
+
+                <div>
+                    <span value="activation" id="activation" style="display: none; text-decoration: none;">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="/javascripts/task-0/registration_script.js"></script>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="/stylesheets/task-13/select_CRUD.css">
+</head>
+
+<body>
+
+    <form action="/task_13/?page=1">
+
+        <div>
+            <label for="input">Enter query : </label>
+            <textarea name="input" id="input" placeholder="enter any select query to go"><%= input_query %></textarea>
+
+            <!-- <label for="db_table">Enter table name : </label>
+            <input type="text" name="db_table" id="db_table"> -->
+
+            <input type="submit" value="Go" >
+        </div>
+
+    </form>
+
+
+    <div class="btn">
+        <button name="first" id="btn1" onclick="window.location.href='/task_13/?page=1&input=<%= input_query %>'" <% if(page == 1) { %> disabled <% } %>> << </button>
+        <button name="previous" id="btn2" onclick="window.location.href='/task_13/?page=<%= Number(page) - 1 %>&input=<%= input_query %>'" <% if(page == 1) {%> disabled <% } %>> < </button>
+        <span> <%= page %> </span>
+        <button name="next" id="btn4" onclick="window.location.href='http://localhost:9027/task_13/?page=<%= Number(page) + 1 %>&input=<%= input_query %>'" <% if(page == last) {%> disabled <% } %>> > </button>
+        <button name="last" id="btn5" onclick="window.location.href='/task_13/?page=<%= last %>&input=<%= input_query %>'" <% if(page == last) {%> disabled <% } %> > >> </button>
+    </div>
+
+
+
+
+
+    <table>
+
+        <tr>
+            <% for(let i=0; i < Object.keys(data[0]).length; i++) { %>
+                <th>
+                    <%= Object.keys(data[0])[i] %>
+                </th>
+                <% }; %>
+        </tr> 
+
+        <% for(let i=0; i < data.length; i++) { %>
+        <tr>
+            <% for(let j=0; j < Object.keys(data[i]).length; j++) { %>
+                <td>
+                    <%= Object.values(data[i])[j] %>
+                </td>
+                <% }; %>
+        </tr> 
+        <% } %>
+
+    </table>
+
+
+</body>
+
+</html>

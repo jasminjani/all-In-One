@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/task-14/city_state_dropdown.css">
+</head>
+
+<body onload="state()">
+
+    <h1>city state dropdown AJAX </h1>
+    <h3>Jani Jasmin - 24DEV027</h3>
+
+    <div id="container">
+        
+        <div class="display">
+            <span id="state_name" name="state_name">state : </span>
+            <select name="state" id="state" onchange="city()">
+                <option value="">select state</option>
+            </select>
+        </div>    
+            
+        <div class="display">
+            <span id="city_name" name="city_name">city : </span>
+            <select name="city" id="city">
+                <option value="">select city</option>
+            </select>
+        </div>
+
+    </div>
+
+
+</body>
+
+
+<script src="/javascripts/task-14/city_state_dropdown_script.js"></script>
+
+</html>

@@ -1,0 +1,48 @@
+body {
+    background-color: #002147;
+}
+
+#container {
+    height: 230px;
+    width: 400px;
+    margin: auto;
+    background-color: #c0e6fc;
+    /* border-radius: 10px;      */
+}
+
+.section {
+    margin-top: 60px;
+}
+
+form>div {
+    padding-top: 40px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.btn {
+    background-color: #002147;
+    color: white;
+    padding: 5px;
+}
+
+.red {
+    display: block;
+    color: red;
+}
+
+#forgot_password {
+    display: block;
+    font-size: 13px;
+    margin-right: -200px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+}
