@@ -5,59 +5,31 @@ console.log(id);
 
 async function details() {
 
-    let jash = await fetch(`https://jsonplaceholder.org/posts/${id}`)
+    let jash = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
         .then(response => response.json());
 
     let table = document.getElementById('tbody');
 
     let html = `
-     <tr>
+
+    <tr>
+        <td>slug</td>
+        <td>${jash.userId}</td>
+    </tr>
+
+    <tr>
         <td>id</td> 
         <td>${jash.id}</td> 
     </tr>
-    <tr>
-        <td>slug</td>
-        <td>${jash.slug}</td>
-    </tr>
-    <tr>
-        <td>url</td>
-        <td>${jash.url}</td>
-    </tr>
+
     <tr>
         <td>title</td>
         <td>${jash.title}</td>
     </tr>
-    <tr>
-        <td>content</td>
-        <td>${jash.content}</td>
-    </tr>
-    <tr>
-        <td>image</td>
-        <td><img src="${jash.image}" alt=""></td>
-    </tr>
-    <tr>
-        <td>thumbnail</td>
-        <td><img src="${jash.thumbnail}" alt=""></td>
-    </tr>
-    <tr>
-        <td>status</td>
-        <td>${jash.status}</td>
-    </tr>
-    <tr>
-        <td>category</td>
-        <td>${jash.category}</td>
-    </tr>
-    <tr>
-        <td>publishedAt</td>
-        <td>${jash.publishedAt}</td>
-    </tr>
-    <tr>
-        <td>updatedAt</td>
-        <td>${jash.updatedAt}</td>
-    </tr>
+
     <tr>
         <td>userId</td>
-        <td>${jash.userId}</td>
+        <td>${jash.body}</td>
     </tr>
     <tr>
         <td> <button id="btn_comment" onclick="show_comments()"> show comments </button> </td>

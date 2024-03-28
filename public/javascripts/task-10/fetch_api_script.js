@@ -15,7 +15,7 @@ if (page == 1) {
 
 async function apifetch() {
 
-     jash = await fetch('https://jsonplaceholder.org/posts').then(response => response.json());
+     jash = await fetch('https://jsonplaceholder.typicode.com/posts').then(response => response.json());
     // console.log(jash);
 
     slice_func(slice_start, slice_end, page);

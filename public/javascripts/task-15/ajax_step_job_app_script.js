@@ -35,7 +35,7 @@ async function ajax1_fetch() {
     let curr_url = window.location.href.split('/');
     curr_url.pop();
     let url_contain = curr_url.pop();
-    if (url_contain == "task_15") {
+    if (url_contain == "localhost:9027") {
         url = "http://localhost:9027/task_15/post";
     }
     else if (url_contain == "update") {
@@ -485,7 +485,7 @@ function year_validation_with_regex(input_id, validation_id) {
 function percentage_validation_with_regex(input_id, validation_id) {
 
     let percentage = document.getElementById(input_id).value.trim();
-    let percentage_regex = /^(100(\.0{1,2})?|([0-9]?[0-9](\.[0-9]{1,2})))$/;
+    let percentage_regex = /(^100(\.0{1,2})?$)|(^([1-9]([0-9])?|0)(\.[0-9]{1,2})?$)/;
 
     if (!percentage.match(percentage_regex)) {
         document.getElementById(validation_id).textContent = "formate must be like 00.00";

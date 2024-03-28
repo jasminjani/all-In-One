@@ -2,8 +2,8 @@ const express = require('express');
 const mysql = require('mysql');
 const isAuthorization = require('../middleware/isAuthorization');
 var task_11 = express.Router();
-let total_record = 50000;
-let pagesize = 350;
+let total_record = 1000;
+let pagesize = 200;
 // let last = total_record / pagesize;
 
 
