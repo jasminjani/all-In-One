@@ -2,15 +2,16 @@ const express = require("express");
 const mysql = require('mysql');
 var task_15 = express.Router();
 const bodyParser = require("body-parser");
+const isAuthorization = require("../middleware/isAuthorization");
 
 
 // FOR INSERTING DATA
 
-task_15.get('/task_15', (req, res) => {
+task_15.get('/task_15', isAuthorization, (req, res) => {
     res.render("./task-15/task-15");
 });
 
-task_15.post('/task_15/post', (req, res) => {
+task_15.post('/task_15/post', isAuthorization, (req, res) => {
 
     let person_id;
 
@@ -18,7 +19,7 @@ task_15.post('/task_15/post', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "ajax_job_app_db_180324"
+        database: "all_task_in_one"
     })
 
     con.connect(async (err) => {
@@ -209,7 +210,7 @@ task_15.post('/task_15/post', (req, res) => {
 
 
 
-task_15.get('/task_15/display/:id', (req, res) => {
+task_15.get('/task_15/display/:id', isAuthorization, (req, res) => {
 
     let person_id = req.params.id;
 
@@ -217,7 +218,7 @@ task_15.get('/task_15/display/:id', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "ajax_job_app_db_180324",
+        database: "all_task_in_one",
         dateStrings: true
     })
 
@@ -281,18 +282,18 @@ task_15.get('/task_15/display/:id', (req, res) => {
 });
 
 
-task_15.get('/task_15/update/:id', (req,res) => {
+task_15.get('/task_15/update/:id', isAuthorization, (req,res) => {
     res.render('./task-15/task-15')
 });
 
 
-task_15.post('/task_15/update/:id', (req, res) => {
+task_15.post('/task_15/update/:id', isAuthorization, (req, res) => {
 
     const con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",   
-        database: "ajax_job_app_db_180324",  
+        database: "all_task_in_one",  
         dateStrings: true
     })
 

@@ -1,24 +1,25 @@
 const express = require('express');
 const mysql = require('mysql');
 var task_9 = express.Router();
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+const isAuthorization = require('../middleware/isAuthorization');
 let person_id;
 
 
 // for insert query
 
-task_9.get('/task_9', (req, res) => {
+task_9.get('/task_9', isAuthorization, (req, res) => {
     res.render('./task-9/task-9');
 })
 
-task_9.post('/task_9', (req, res) => {
+task_9.post('/task_9', isAuthorization, (req, res) => {
 
 
     const con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "validation_job_app_db_120324"
+        database: "all_task_in_one"
     })
 
     con.connect(async (err) => {
@@ -201,7 +202,7 @@ task_9.post('/task_9', (req, res) => {
 
 // for update query
 
-task_9.get('/task_9/:id', (req, res) => {
+task_9.get('/task_9/:id', isAuthorization, (req, res) => {
 
     let person_id = req.params.id;
 
@@ -209,7 +210,7 @@ task_9.get('/task_9/:id', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "validation_job_app_db_120324",
+        database: "all_task_in_one",
         dateStrings: true
     })
 
@@ -274,13 +275,13 @@ task_9.get('/task_9/:id', (req, res) => {
 
 
 
-task_9.post('/task_9/:id', (req, res) => {
+task_9.post('/task_9/:id', isAuthorization, (req, res) => {
 
     const con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "validation_job_app_db_120324",
+        database: "all_task_in_one",
         dateStrings: true
     })
 

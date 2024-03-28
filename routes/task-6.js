@@ -1,16 +1,17 @@
 const express = require('express');
 const mysql = require('mysql');
 var task_6 = express.Router();
+var isAuthorization = require('../middleware/isAuthorization');
 
 
 
-task_6.get('/task_6',(req,res) => {
+task_6.get('/task_6', isAuthorization, (req,res) => {
 
     const con = mysql.createConnection({
         host : "localhost",
         user : "root",
         password : "root",
-        database : "student_result_2702"
+        database : "all_task_in_one"
     })
 
     con.connect((err) => {
@@ -35,13 +36,13 @@ task_6.get('/task_6',(req,res) => {
 });
 
 
-task_6.get('/task_6/show_more', (req,res) => {
+task_6.get('/task_6/show_more', isAuthorization, (req,res) => {
 
     const con = mysql.createConnection({
         host : "localhost",
         user : "root",
         password : "root",
-        database : "student_result_2702"
+        database : "all_task_in_one"
     });
 
     con.connect((err) => {

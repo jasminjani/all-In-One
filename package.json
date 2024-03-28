@@ -1,0 +1,22 @@
+{
+  "name": "all-in-one",
+  "version": "1.0.0",
+  "description": "npm i",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasminjani/all-In-One.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasminjani/all-In-One/issues"
+  },
+  "homepage": "https://github.com/jasminjani/all-In-One#readme",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}

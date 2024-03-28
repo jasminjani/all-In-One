@@ -2,19 +2,20 @@ const express = require('express');
 const mysql = require('mysql');
 var task_16 = express.Router();
 const bodyParser = require('body-parser');
+const isAuthorization = require('../middleware/isAuthorization');
 
 
-task_16.get('/task_16', (req,res) => {
+task_16.get('/task_16', isAuthorization, (req,res) => {
     res.render('./task-16/task-16');
 });
 
-task_16.get('/task_16/country', (req,res) => {
+task_16.get('/task_16/country', isAuthorization, (req,res) => {
 
     const con = mysql.createConnection({
         host : "localhost",
         user : "root",
         password : "root",
-        database : "clock_timezone_200324"
+        database : "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -30,14 +31,14 @@ task_16.get('/task_16/country', (req,res) => {
 
 });
 
-task_16.get('/task_16/city', (req,res) => {
+task_16.get('/task_16/city', isAuthorization, (req,res) => {
 
     // console.log(req.query.country);
     const con = mysql.createConnection({
         host : "localhost",
         user : "root",
         password : "root",
-        database : "clock_timezone_200324"
+        database : "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -54,7 +55,7 @@ task_16.get('/task_16/city', (req,res) => {
 
 });
 
-task_16.post('/task_16', (req,res) => {
+task_16.post('/task_16', isAuthorization, (req,res) => {
 
 });
 

@@ -5,7 +5,8 @@ const md5 = require('md5');
 var jwt = require('jsonwebtoken');
 var router = express.Router();
 const bodyParser = require('body-parser');
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+const isAuthorization = require('../middleware/isAuthorization');
 
 
 
@@ -22,7 +23,7 @@ router.post('/post', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "registration_page_200324"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -82,7 +83,7 @@ router.get('/password/:activation', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "registration_page_200324"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -100,19 +101,13 @@ router.get('/password/:activation', (req, res) => {
             let time_diff_in_sec = (curr_time - created_time) / 1000;
 
 
-            if (time_diff_in_sec < 60) { // after 60 seconds link will be expire and data will be deleted from database.
+            if (time_diff_in_sec < 60) { // after 60 seconds link will be expired. 
                 res.render('./task-0/password');
             }
             else {
 
-                // let delete_user_registration = `DELETE FROM user_registrations WHERE activation_code = "${req.params.activation}"`;
-
-                // con.query(delete_user_registration, (err, result2) => {
-                //     if (err) throw err;
-
                 res.write("session time out");
                 res.end()
-                // });
             }
         })
     });
@@ -139,7 +134,7 @@ router.post('/password/:activation', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "registration_page_200324"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -184,7 +179,7 @@ router.post('/loginpage', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "registration_page_200324"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -215,10 +210,11 @@ router.post('/loginpage', (req, res) => {
 
                 if (md5_pass == result[0].password) {
 
-                    var token = jwt.sign({ foo: result[0].email }, 'shhhhh');
+                    var token = jwt.sign({ email: result[0].email }, 'jash');
+                    res.cookie("token", token, {maxAge: 60*1000});
                     console.log(token.length);
 
-                    res.send({ data: result, token: token });
+                    res.send({ data: result});
                 } else {
                     res.send({ b: "Enter valid details" });
                 }
@@ -238,7 +234,7 @@ router.post('/forgot', (req, res) => {
         host: "localhost",
         user: "root",
         password: "root",
-        database: "registration_page_200324"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {
@@ -269,7 +265,8 @@ router.post('/forgot', (req, res) => {
 // ======== DASHBOARD ===========
 
 
-router.get('/dashboard/:token', (req, res) => {
+router.get('/dashboard/', isAuthorization,(req, res) => {
+    console.log(req.body.email);
     res.render("./task-0/dashboard")
 });
 

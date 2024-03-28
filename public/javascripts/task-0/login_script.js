@@ -73,12 +73,11 @@ async function login() {
             });
 
         res1 = await res1.json();
-        console.log(res1.token);
 
         if (res1.data) {
             if (res1.data[0].email == document.getElementById('email').value) {
 
-                window.location.href = `http://localhost:9027/dashboard/${res1.token}`;
+                window.location.href = `http://localhost:9027/dashboard`;
                 
                 // document.getElementById('email_validation').innerHTML = "valid Credential"
                 // document.getElementById('email_validation').style.color = "green"

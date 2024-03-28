@@ -1,16 +1,17 @@
 const express = require('express');
 const mysql = require('mysql');
+const isAuthorization = require('../middleware/isAuthorization');
 
 var task_7 = express.Router();
 
 
-task_7.get('/task_7', (req, res) => {
+task_7.get('/task_7', isAuthorization, (req, res) => {
 
     const con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "student_detail_2602"
+        database: "all_task_in_one"
     });
 
     con.connect((err) => {

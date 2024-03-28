@@ -1,18 +1,19 @@
 const express = require('express');
 const mysql = require('mysql');
+const isAuthorization = require('../middleware/isAuthorization');
 var task_12 = express.Router();
 let total_record = 200;
 let pagesize = 25;
 
 
 
-task_12.get('/task_12/attendance', (req, res) => {
+task_12.get('/task_12/attendance', isAuthorization, (req, res) => {
 
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "student_result_2702"
+        database: "all_task_in_one"
     });
 
     let month = req.query.month;
@@ -91,13 +92,13 @@ task_12.get('/task_12/attendance', (req, res) => {
 
 });
 
-task_12.get('/task_12/exam', (req, res) => {
+task_12.get('/task_12/exam', isAuthorization, (req, res) => {
 
     var con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "student_result_2702"
+        database: "all_task_in_one"
     });
 
     con.connect(function (err) {
@@ -115,7 +116,8 @@ task_12.get('/task_12/exam', (req, res) => {
              SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.practical_mark END) AS practical_final,
              SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.theoretical_mark END) AS theory_final,
              sum(CASE WHEN exam_id =1 OR exam_id =2 OR exam_id =3 THEN practical_mark + theoretical_mark END) AS obtain_mark
-             FROM student_master INNER JOIN result_master ON student_master.s_id = result_master.s_id
+             FROM student_master
+             INNER JOIN result_master ON student_master.s_id = result_master.s_id
              GROUP BY student_master.s_id LIMIT ?`;
 
             con.query(select, [pagesize], (err, result) => {
@@ -138,7 +140,8 @@ task_12.get('/task_12/exam', (req, res) => {
             SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.practical_mark END) AS practical_final,
             SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.theoretical_mark END) AS theory_final,
             sum(CASE WHEN exam_id =1 OR exam_id =2 OR exam_id =3 THEN practical_mark + theoretical_mark END) AS obtain_mark
-            FROM student_master INNER JOIN result_master ON student_master.s_id = result_master.s_id
+            FROM student_master 
+            INNER JOIN result_master ON student_master.s_id = result_master.s_id
             GROUP BY student_master.s_id LIMIT ?,?`;
 
             con.query(select, [last_record, pagesize], (err, result) => {
@@ -155,13 +158,13 @@ task_12.get('/task_12/exam', (req, res) => {
 
 
 
-task_12.get('/task_12/fullresult/:id', (req, res) => {
+task_12.get('/task_12/fullresult/:id', isAuthorization, (req, res) => {
 
     let con = mysql.createConnection({
         host: "localhost",
         user: "root",
         password: "root",
-        database: "student_result_2702"
+        database: "all_task_in_one"
     });
 
     con.connect(function (err) {
@@ -192,7 +195,9 @@ task_12.get('/task_12/fullresult/:id', (req, res) => {
             SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.practical_mark END) AS practical_final,
             SUM(CASE WHEN result_master.exam_id = 3 THEN result_master.theoretical_mark END) AS theory_final,
             sum(CASE WHEN exam_id =1 OR exam_id =2 OR exam_id =3 THEN practical_mark + theoretical_mark END) AS obtain_mark
-            FROM student_master INNER JOIN result_master ON student_master.s_id = result_master.s_id INNER JOIN subject_master ON subject_master.sub_id = result_master.sub_id
+            FROM student_master 
+            INNER JOIN result_master ON student_master.s_id = result_master.s_id 
+            INNER JOIN subject_master ON subject_master.sub_id = result_master.sub_id
             WHERE student_master.s_id = ? GROUP BY subject_master.sub_id`;
 
 
@@ -204,12 +209,7 @@ task_12.get('/task_12/fullresult/:id', (req, res) => {
                 con.query(total, [s_id], (err, result3) => {
                     if (err) throw err;
 
-                    // console.log(result1)
-                    // let first_name = result[1].first_name;
-                    // let last_name = result[1].last_name;
-                    // let name = first_name + " " + last_name;
-                    // let fdata = JSON.parse(JSON.stringify( result1))
-                    // console.log(fdata)
+
                     res.render('./task-12/full_result', { data1: result1, data2: result2, data3 : result3 });
                 })
             });
