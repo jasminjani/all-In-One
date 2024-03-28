@@ -24,3 +24,18 @@ a {
 h1, h3 {
     text-align: center;
 }
+
+.logout {
+    height: 30px;
+    width: 150px;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    background-color: red;
+    font-size: large;
+}
+
+#logout {
+    cursor: pointer;
+}

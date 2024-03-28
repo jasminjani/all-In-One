@@ -211,7 +211,7 @@ router.post('/loginpage', (req, res) => {
                 if (md5_pass == result[0].password) {
 
                     var token = jwt.sign({ email: result[0].email }, 'jash');
-                    res.cookie("token", token, {maxAge: 60*1000});
+                    res.cookie("token", token, {maxAge: 1*60*60*1000});
                     console.log(token.length);
 
                     res.send({ data: result});
@@ -268,6 +268,16 @@ router.post('/forgot', (req, res) => {
 router.get('/dashboard/', isAuthorization,(req, res) => {
     console.log(req.body.email);
     res.render("./task-0/dashboard")
+});
+
+
+
+// ======== LOGOUT FROM DASHBOARD ========
+
+
+router.get('/logout', (req,res) => {
+    delete req.body.email;
+    res.clearCookie("token").redirect('/login');
 });
 
 

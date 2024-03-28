@@ -20,18 +20,19 @@
 
                 <div>
                     <label for="email">Email</label>
-                    <input type="text" name="email" id="email" placeholder="xyz@pqr.com">
+                    <input type="text" name="email" id="email" placeholder="xyz@pqr.com" tabindex="1">
                     <span class="red" id="email_validation"></span>
                 </div>
 
                 <div>
                     <label for="password">Password</label>
-                    <input type="text" name="password" id="password">
+                    <input type="text" name="password" id="password" tabindex="2">
                     <span id="forgot_password" name="forgot_password" onclick="forgot_password()">forgot password</span>
                 </div>
 
                 <div>
-                    <span class="btn" value="login" id="login" onclick="login()">Login </span>
+                    <span class="btn" value="login" id="login" onclick="login()" tabindex="3">Login </span>
+                    <p>  Not an User? <a href="http://localhost:9027/">Register</a></p>
                 </div>
 
 

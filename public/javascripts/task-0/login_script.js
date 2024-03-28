@@ -3,7 +3,7 @@ async function forgot_password() {
 
     try {
 
-        document.getElementById('container').style.height = "245px";
+        document.getElementById('container').style.height = "270px";
 
         if (email_validation_with_regex('email', 'email_validation') == false) {
             return false;
@@ -52,7 +52,7 @@ async function login() {
 
     try {
 
-        document.getElementById('container').style.height = "245px";
+        document.getElementById('container').style.height = "270px";
 
         if (email_validation_with_regex('email', 'email_validation') == false) {
             return false;

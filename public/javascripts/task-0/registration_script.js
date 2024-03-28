@@ -31,10 +31,11 @@ async function fetch_data() {
             document.getElementById('email_validation').innerHTML = res1.a;
         }
         else if (res1.b) {
+            document.getElementById('already_user').style.display = "none"
             document.getElementById('activation').innerHTML = `<span>User is already registered but does not activated link. Click below link for activate. </span><a href="http://localhost:9027/password/${res1.activation}">http://localhost:9027/password/${res1.activation}</a>`;
         }
         else {
-
+            document.getElementById('already_user').style.display = "none"
             document.getElementById('activation').innerHTML = `<span>Thank you for Registration. Click below link for activate. </span><a href="http://localhost:9027/password/${res1.activation}">http://localhost:9027/password/${res1.activation}</a>`;
         }
 
