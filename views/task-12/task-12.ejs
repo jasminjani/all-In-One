@@ -12,7 +12,7 @@
     <h1>Jani jasmin</h1>
     <h3>Attendance</h3>
 
-    <% 
+    <% try {
     let last = Math.ceil(total_record/pagesize); 
     %>    
 
@@ -66,7 +66,7 @@
             <td><%= item.present %></td>
             <td><%= ((item.percentage/month_day)*100).toFixed(2) %> %</td>
         </tr>
-        <% }); %>
+        <% }); } catch(e) { console.log(e); } %>
 
 
     </table>

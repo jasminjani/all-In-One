@@ -40,7 +40,7 @@
     <table>
 
         <tr>
-            <% for(let i=0; i < Object.keys(data[0]).length; i++) { %>
+            <% try { for(let i=0; i < Object.keys(data[0]).length; i++) { %>
                 <th>
                     <%= Object.keys(data[0])[i] %>
                 </th>
@@ -55,7 +55,7 @@
                 </td>
                 <% }; %>
         </tr> 
-        <% } %>
+        <% } } catch(e) { console.log(e); } %>
 
     </table>
 

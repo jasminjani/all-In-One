@@ -9,7 +9,7 @@
 
 <body>
 
-    <% 
+    <% try {
     let last = Math.ceil(total_record/pagesize); 
     %>  
 
@@ -59,7 +59,7 @@
             <td><%= item.obtain_mark %></td>
             <td><button onclick="window.location.href='/task_12/fullresult/<%= item.s_id %>'">view result</button></td>
         </tr>
-        <% }); %>
+        <% }); } catch(e) { console.log(e); } %>
 
     </table>
 

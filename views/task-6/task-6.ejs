@@ -20,12 +20,13 @@
             <input id="go" type="submit" value="Go">
             <!-- <input type="button" value="show more ways" onclick="window.location.href='http://localhost:9027/task_6/show_more'"> -->
 
-            <a style="cursor: pointer; text-decoration: underline;" onclick="window.location.href='http://localhost:9027/task_6/show_more'">show more ways</a>
+            <a style="cursor: pointer; text-decoration: underline;" href='http://localhost:9027/task_6/show_more'">show more ways</a>
         </div>
 
     </form>
 
-    <% if(s_id == 0) { } else { %>
+    <%  try {
+        if(s_id == 0) { } else { %>
 
         <table>
 
@@ -50,7 +51,7 @@
 
         </table>
 
-        <% }; %>
+        <% }; } catch(e) {console.log(e);} %>
 
 </body>
 

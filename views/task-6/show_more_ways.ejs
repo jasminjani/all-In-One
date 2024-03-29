@@ -28,7 +28,7 @@
     </form>
 
 
-    <% if (first_name == undefined && last_name == undefined && gender == undefined && email == undefined && phone_no == undefined && option == undefined ) {
+    <% try { if (first_name == undefined && last_name == undefined && gender == undefined && email == undefined && phone_no == undefined && option == undefined ) {
        } else { %>
         
         <table>
@@ -55,7 +55,7 @@
 
 </table>
 
-        <% }; %>
+        <% }; } catch(e) { console.log(e); } %>
 
 </body>
 

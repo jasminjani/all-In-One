@@ -56,7 +56,7 @@
             <th>City</th>
         </tr>
 
-        <% data.forEach(function(item) { %>
+        <% try { data.forEach(function(item) { %>
             <tr>
                 <td>
                     <%= item.s_id %>
@@ -80,7 +80,7 @@
                     <%= item.city %>
                 </td>
             </tr>
-            <% }); %>
+            <% }); } catch(e) { console.log(e); } %>
 
     </table>
 

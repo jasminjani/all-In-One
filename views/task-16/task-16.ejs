@@ -19,22 +19,22 @@
         
         <div class="display">
             <span id="country_name" name="country_name">Country : </span>
-            <select name="country" id="country" onchange="city_timezone()">
+            <select name="country" id="country" onchange="city_timezone()" tabindex="1">
                 <option value="">select country</option>
             </select>
         </div>    
             
         <div class="display">
             <span id="city_timezone_name" name="city_timezone_name">city_timezone : </span>
-            <select name="city_timezone" id="city_timezone" onchange="timezone_based_time()">
+            <select name="city_timezone" id="city_timezone" onchange="timezone_based_time()" tabindex="2">
                 <option value="">select city timezone</option>
             </select>
         </div>
 
         <div class="display">
             <span id="time"> Time : </span>
-            <input type="text" name="time_input" id="time_input">
-            <span id="converter"  onclick="convert_time()">Convert time </span>
+            <input type="text" name="time_input" id="time_input" tabindex="3">
+            <span id="converter"  onclick="convert_time()" tabindex="4">Convert time </span>
         </div>
         
         <div id="time_output"></div>

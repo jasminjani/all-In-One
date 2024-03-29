@@ -1,3 +1,11 @@
+let submit_btn = document.getElementById('submit');
+
+submit_btn.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        verify_pass();
+    }
+});
+
 
 async function verify_pass() {
 
@@ -28,7 +36,7 @@ async function verify_pass() {
 
 
         document.getElementById('login').style.display = "inline";
-        document.getElementById('login').innerHTML = `<a href="http://localhost:9027/login">Go to Login page</a>`;
+        document.getElementById('login').innerHTML = `<a tabindex="4" href="http://localhost:9027/login">Go to Login page</a>`;
         document.getElementById('submit').style.display = "none";
     }
 }

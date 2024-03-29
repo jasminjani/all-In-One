@@ -1,4 +1,12 @@
 
+let forgot_password_btn = document.getElementById('forgot_password');
+
+forgot_password_btn.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        forgot_password();
+    }
+});
+
 async function forgot_password() {
 
     try {
@@ -45,8 +53,13 @@ async function forgot_password() {
 
 }
 
+let login_btn = document.getElementById('login');
 
-
+login_btn.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        login();
+    }
+});
 
 
 async function login() {

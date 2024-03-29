@@ -1,4 +1,12 @@
 
+let register_btn = document.getElementById('register');
+
+register_btn.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        fetch_data();
+    }
+});
+
 async function fetch_data() {
 
     try {

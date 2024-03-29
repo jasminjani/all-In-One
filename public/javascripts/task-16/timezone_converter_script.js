@@ -1,4 +1,10 @@
+let converter_btn = document.getElementById('converter');
 
+converter_btn.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+        convert_time();
+    }
+});
 
 function timezone_based_time() {
 

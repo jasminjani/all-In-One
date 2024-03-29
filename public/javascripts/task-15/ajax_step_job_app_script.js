@@ -26,6 +26,21 @@ if (curr_url.pop() == "update") {
 
 async function ajax1_fetch() {
 
+    let err = [];
+
+    if (Preferances.style.display == "block") {
+
+        err.push(number_validation('notice_period_in_month', 'notice_period_in_month_validation'));
+        err.push(number_validation('expected_ctc', 'expected_ctc_validation'));
+        err.push(number_validation('current_ctc', 'current_ctc_validation'));
+        err.push(dropdown_validation('department', 'select_department', 'department_validation'));
+
+    }
+
+    if (err.includes(false)) {
+        return false;
+    }
+
     const form = document.getElementById('form');
     const obj = new URLSearchParams(new FormData(form));
 

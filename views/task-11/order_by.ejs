@@ -9,7 +9,7 @@
 
 <body>
 
-    <% 
+    <% try {
     let last = Math.ceil(total_record/pagesize); 
     %>    
 
@@ -59,7 +59,7 @@
             <td><%=  item.blood_group %></td>
             <td><%=  item.created_at %></td>
         </tr>
-        <% }); %>
+        <% }); } catch(e) { console.log(e); } %>
     </table>
     
 
