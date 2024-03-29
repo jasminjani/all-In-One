@@ -35,3 +35,11 @@ img {
 #myspan {
     font-size: 25px;
 }
+
+button {
+    margin-top: 1%;
+    height: 50px;
+    width: 100px;
+    font-size: larger;
+    background-color: rgb(122, 122, 204);
+}

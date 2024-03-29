@@ -1,16 +1,5 @@
 var scounter = 0;
 
-document.addEventListener("click", function (e) {
-    const target = e.target.closest("#target");
-
-    if (target) {
-
-        clicked();
-        scounter += 1;
-        document.getElementById("myspan").innerHTML = "<p> Score : " + scounter + "</p>";
-    }
-});
-
 
 var timeLeft = 45;
 var elem = document.getElementById('Timer');
@@ -22,7 +11,7 @@ function countdown() {
         elem.innerHTML = "timeout";
         clearTimeout(timerId);
         document.getElementById("mytable").style.pointerEvents = "none";
-        doSomething();
+        alert("score is : "+scounter)
     } else {
         elem.innerHTML = timeLeft + ' seconds remaining';
         timeLeft--;
@@ -31,7 +20,10 @@ function countdown() {
 
 
 function clicked() {
-
+    document.getElementById("target").removeAttribute("onclick")
+    document.getElementById("target").removeAttribute("id")
+    scounter += 1;
+    document.getElementById("myspan").innerHTML = "<p> Score : " + scounter + "</p>";
     addrow();
     addcol();
     getRandomColor();
@@ -73,6 +65,7 @@ function opacity() {
 
     document.getElementsByTagName("td")[r].style.opacity = "0.7";
     document.getElementsByTagName("td")[r].setAttribute('id', 'target');
+    document.getElementById("target").setAttribute("onclick", "clicked()")
 
     for (let i = 0; i < document.getElementsByTagName("td").length; i++) {
         if (i == r) {

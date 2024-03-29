@@ -3,12 +3,16 @@ body {
     color: white;
 }
 
-td {
+td,th {
     border: 1px solid black;
     background-color: #c0e6fc;
     text-align: center;
     padding: 10px;
     color: black;
+}
+
+th {
+    background-color: #47a9e2;
 }
 /* 
 table {

@@ -54,7 +54,7 @@ async function show_comments() {
 
     document.getElementById('show_comment').style.visibility = 'visible';
 
-    let commentAPI = await fetch('https://jsonplaceholder.org/comments')
+    let commentAPI = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
     commentAPI = await commentAPI.json()
 
     // console.log(commentAPI);
@@ -65,7 +65,7 @@ async function show_comments() {
         // console.log(item.comment);
 
         if (id == item.postId) {
-            comment_arr.push(item.comment)
+            comment_arr.push(item)
         }
     });
 
@@ -79,16 +79,56 @@ async function show_comments() {
 
         document.getElementById('show_comment').innerHTML = ""
 
-        const ul = document.createElement("ul");
+        const table = document.createElement("table");
 
-        comment_arr.forEach((element) => {
-            // console.log(element);
-            let li = document.createElement("li");
-            li.innerHTML = element;
-            ul.appendChild(li);
+        let tr = document.createElement("tr");
+
+        let td = document.createElement("th");
+        td.innerHTML = "id";
+        tr.appendChild(td);
+
+        let td2 = document.createElement("th");
+        td2.innerHTML = "name";
+        tr.appendChild(td2);
+
+        let td3 = document.createElement("th");
+        td3.innerHTML = "email";
+        tr.appendChild(td3);
+
+        let td4 = document.createElement("th");
+        td4.innerHTML = "body";
+        tr.appendChild(td4);
+
+        table.appendChild(tr);
+
+
+        comment_arr.forEach(element => {
+
+            // console.log(element.id);
+            const tr = document.createElement("tr");
+
+            let td = document.createElement("td");
+            td.innerHTML = element.id;
+            tr.appendChild(td);
+
+            let td2 = document.createElement("td");
+            td2.innerHTML = element.name;
+            tr.appendChild(td2);
+
+            let td3 = document.createElement("td");
+            td3.innerHTML = element.email;
+            tr.appendChild(td3);
+
+            let td4 = document.createElement("td");
+            td4.innerHTML = element.body;
+            tr.appendChild(td4);
+
+            table.appendChild(tr);
+
         });
 
-        document.getElementById('show_comment').appendChild(ul);
+        document.getElementById('show_comment').appendChild(table);
+
 
     }
 

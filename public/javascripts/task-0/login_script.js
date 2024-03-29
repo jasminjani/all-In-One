@@ -35,7 +35,8 @@ async function forgot_password() {
         }
         else {
             // console.log(res1.a);
-            document.getElementById('email_validation').innerHTML = res1.a;
+            // document.getElementById('email_validation').innerHTML = res1.a;
+            document.getElementById('email_validation').innerHTML = "Invalid Credential";
         }
 
     } catch (e) {
