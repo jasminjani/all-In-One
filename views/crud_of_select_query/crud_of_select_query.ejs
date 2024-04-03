@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home page</title>
+    <link rel="stylesheet" href="/stylesheets/crud_of_select_query/select_CRUD.css">
+</head>
+
+<body>
+
+    <form action="/crud_of_select_query/?page=1">
+
+        <div>
+            <label for="input">Enter query : </label>
+            <textarea name="input" id="input" placeholder="enter any select query without ;"><%= input_query %></textarea>
+
+            <!-- <label for="db_table">Enter table name : </label>
+            <input type="text" name="db_table" id="db_table"> -->
+
+            <input type="submit" value="Go" >
+        </div>
+
+    </form>
+
+
+    <div class="btn">
+        <button name="first" id="btn1" onclick="window.location.href='/crud_of_select_query/?page=1&input=<%= input_query %>'" <% if(page == 1) { %> disabled <% } %>> << </button>
+        <button name="previous" id="btn2" onclick="window.location.href='/crud_of_select_query/?page=<%= Number(page) - 1 %>&input=<%= input_query %>'" <% if(page == 1) {%> disabled <% } %>> < </button>
+        <span> <%= page %> </span>
+        <button name="next" id="btn4" onclick="window.location.href='http://localhost:9027/crud_of_select_query/?page=<%= Number(page) + 1 %>&input=<%= input_query %>'" <% if(page == last) {%> disabled <% } %>> > </button>
+        <button name="last" id="btn5" onclick="window.location.href='/crud_of_select_query/?page=<%= last %>&input=<%= input_query %>'" <% if(page == last) {%> disabled <% } %> > >> </button>
+    </div>
+
+
+
+
+
+    <table>
+
+        <tr>
+            <% try { for(let i=0; i < Object.keys(data[0]).length; i++) { %>
+                <th>
+                    <%= Object.keys(data[0])[i] %>
+                </th>
+                <% }; %>
+        </tr> 
+
+        <% for(let i=0; i < data.length; i++) { %>
+        <tr>
+            <% for(let j=0; j < Object.keys(data[i]).length; j++) { %>
+                <td>
+                    <%= Object.values(data[i])[j] %>
+                </td>
+                <% }; %>
+        </tr> 
+        <% } } catch(e) { console.log(e); } %>
+
+    </table>
+
+
+</body>
+
+</html>

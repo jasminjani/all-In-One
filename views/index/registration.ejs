@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <link rel="stylesheet" href="/stylesheets/index/registration.css">
+</head>
+
+<body>
+
+    <h1>Registration</h1>
+
+    <div id="container">
+
+        <div class="section">
+
+            <form id="form">
+
+                <div>
+                    <label for="first_name">First name</label>
+                    <input type="text" name="first_name" id="first_name" tabindex="1">
+                    <span class="red" id="first_name_validation"></span>
+
+                </div>
+
+                <div>
+                    <label for="last_name">Last name</label>
+                    <input type="text" name="last_name" id="last_name" tabindex="2">
+                    <span class="red" id="last_name_validation"></span>
+                </div>
+
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" placeholder="xyz@pqr.com" tabindex="3">
+                    <span class="red" id="email_validation"></span>
+                </div>
+
+                <div>
+                    <label for="phone_no">Phone no.</label>
+                    <input type="text" name="phone_no" id="phone_no" tabindex="4">
+                    <span class="red" id="phone_no_validation"></span>
+                </div>
+
+                <div>
+                    <span class="btn" value="register" id="register" onclick="fetch_data()" tabindex="5">Register </span>
+                </div>
+
+                <div id="already_user"  >
+                    <span >Already user? <a href="http://localhost:9027/login" tabindex="6">Login</a></span>
+                </div>
+
+                <div>
+                    <span value="activation" id="activation" style="display: none; text-decoration: none;">
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+<script src="/javascripts/index/registration_script.js"></script>
+
+</html>

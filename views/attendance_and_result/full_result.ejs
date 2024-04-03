@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Result</title>
+    <link rel="stylesheet" href="/stylesheets/attendance_and_result/full_result.css">
+</head>
+
+<body>
+
+
+    <h1>Jani Jasmin</h1>
+    <h3>Report card</h3>
+    
+    <table class="center">
+        <% try { %>
+        <tr>
+           
+            <th colspan="7">Name : <%= data1[0].first_name + " " + data1[0].last_name %> </th>
+           
+        </tr>
+
+        <tr>
+            <th colspan="3">Attendance : <%= data1[0].present %> / 91</th>
+            <th colspan="4">Attendance percentage : <%=  ((data1[0].present/91)*100).toFixed(2) %> % </th>
+        </tr>
+
+        <tr>
+            <th rowspan="2">Subject</th>
+            <th colspan="2">Terminal</th>
+            <th colspan="2">Prelim</th>
+            <th colspan="2">Final</th>
+        </tr>
+
+        <tr>
+            <th>Practical(20)</th>
+            <th>Theory(30)</th>
+            <th>Practical(20)</th>
+            <th>Theory(30)</th>
+            <th>Practical(30)</th>
+            <th>Theory(70)</th>
+        </tr>
+
+        <% data2.forEach(function(item) { %>
+        <tr>
+            <td><%= item.sub_name %></td>
+            <td><%= item.practical_terminal %></td>
+            <td><%= item.theory_terminal %></td>
+            <td><%= item.practical_prelim %></td>
+            <td><%= item.theory_prelim %></td>
+            <td><%= item.practical_final %></td>
+            <td><%= item.theory_final %></td>
+        </tr>
+        <% }); %>
+
+        <tr>    
+            <td colspan="2">Total</td>
+            <td colspan="5"><%= data3[0].total_mark %> / 1200</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">Exam Percentage</td>
+            <td colspan="5"><%= ((data3[0].total_mark/1200) * 100).toFixed(2) %> %</td>
+        </tr>
+        <% } catch(e) { console.log(e); } %>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/timezone_converter/timezone_converter.css">
+</head>
+
+<body onload="country()">
+
+    <h1>Timezone converter</h1>
+    <h3>Jani Jasmin - 24DEV027</h3>
+
+    <div id="container">
+
+
+        
+        <div class="display">
+            <span id="country_name" name="country_name">Country : </span>
+            <select name="country" id="country" onchange="city_timezone()" tabindex="1">
+                <option value="">select country</option>
+            </select>
+        </div>    
+            
+        <div class="display">
+            <span id="city_timezone_name" name="city_timezone_name">city_timezone : </span>
+            <select name="city_timezone" id="city_timezone" onchange="timezone_based_time()" tabindex="2">
+                <option value="">select city timezone</option>
+            </select>
+        </div>
+
+        <div class="display">
+            <span id="time"> Time : </span>
+            <input type="text" name="time_input" id="time_input" tabindex="3">
+            <span id="converter"  onclick="convert_time()" tabindex="4">Convert time </span>
+        </div>
+        
+        <div id="time_output"></div>
+    </div>
+
+
+</body>
+
+<script src="/javascripts/timezone_converter/timezone_converter_script.js"></script>
+
+</html>

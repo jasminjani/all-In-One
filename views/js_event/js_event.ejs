@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <link rel="stylesheet" href="stylesheets/js_event/js_event.css">
+
+</head>
+
+<body onresize="sizechangee()" onoffline="oflin()" onhashchange="hashchng()">
+
+    <table border="1" cellspacing="0" cellpadding="70">
+        <tr>
+            <td class="color" onclick="onclicked()">onclick</td>
+            <td ondblclick="ondoublescript()"> on double click </td>
+            <td class="color"> <input type="text" onblur="onbluron()">on blur</td>
+            <td oncontextmenu="contextmenu()">on context menu(right click)</td>
+            <td class="color" onmousedown="mousedown()">mousedown</td>
+            <td onmouseenter="mouseenter()">mouse enter</td>
+        </tr>
+
+        <tr>
+            <td oncut="cut()"><input type="text">oncut</td>
+            <td class="color" onpaste="paste()"><input type="text">onpaste</td>
+            <td ondrag="drag()"><input type="text">ondrag</td>
+            <td class="color" ondragstart="dragstart()"><input type="text">dragstart</td>
+            <td ondrop="drop()"><input type="text">drop</td>
+            <td class="color" ondragend="dragend()"><input type="text">dragend</td>
+        </tr>
+
+        <tr>
+            <td class="color" onmousemove="mousemove(this)">mouse move</td>
+            <td onmouseleave="mouseleave()">mouse leave</td>
+            <td class="color" onmouseout="mouseout()">mouse out</td>
+            <td onmouseover="mouseover()">mouse over</td>
+            <td class="color" onmouseup="mouseup()">mouse up</td>
+            <td oncopy="copy()"><input type="text">oncopy</td>
+        </tr>
+
+        <tr>
+            <td onwheel="wheel()">mouse wheel</td>
+            <td class="color"  onscroll="mousescroll()"><input type="text" scroll value="dsdfsdfsdfsfsfsfsfsfsfsfsfsfsfsfsfsfsfnd">on scroll</td>
+            <td><video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls ondurationchange="durationchange()"></video>duartion change</td>
+            <td class="color"><input type="text" id="upper" onselect="seelect()">on select</td>
+            <td ><input type="text" oninput="inpte()">on input</td>
+            <td class="color"><input type="text" onfocus="fcs()">on focus</td>
+        </tr>
+
+        <tr>
+            <td class="color" > <video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls onplay="playy()" ></video>onplay</td>
+            <td><video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls onpause="pausee()" ></video>onpause</td>
+            <td class="color"><video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls onprogress="progres()" ></video>progress</td>
+            <td><video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls onended="end()" ></video>end</td>
+            <td class="color" onchange="chang()"><input type="text">onchange</td>
+            <td> <video src="https://www.w3schools.com/tags/mov_bbb.mp4"  controls onvolumechange="volumechange()" ></video>volume change</td>
+        </tr>
+
+    </table>
+
+
+</body>
+
+<script src="javascripts/js_event/js_event_script.js"></script>
+
+</html>
