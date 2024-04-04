@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    <% try { %>
     <% var data = data || null %>
     <% var data2 = data2 || null %>
     <% var data3 = data3 || null %>
@@ -745,6 +745,7 @@
         <input type="submit" value="submit">
         <input type="reset" value="reset">
     </form>
+    <% } catch(e) { console.log(e); } %>
 
 </body>
 

@@ -1,12 +1,12 @@
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
 const con = require('../../database_connection');
 
 // ======= FOR UPDATE QUERY ==========
 
 let display_data = async (req, res) => {
 
-  let person_id = req.params.id;
+  try {
+
+    let person_id = req.params.id;
 
     let select_basic_detail = `SELECT * FROM person_basic_detail where person_id = ?`;
 
@@ -55,10 +55,13 @@ let display_data = async (req, res) => {
         });
       });
     });
+  } catch (e) { console.log(e); }
 }
 
 
 let update_data_into_job_app = async (req, res) => {
+
+  try {
 
     let body = req.body;
     let person_id = req.params.id;
@@ -164,12 +167,12 @@ let update_data_into_job_app = async (req, res) => {
           }
 
           if (typeof (body.technology_name) == "string") {
-            update_tech_known = `UPDATE technology_known SET technology_name = '${body.technology_name}', tech_stage = '${tech_stage}' WHERE tech_id = '${tech_id[i]}'`;
+            update_tech_known = `UPDATE technology_known SET technology_name = '${body.technology_name}', tech_stage = ? WHERE tech_id = ?`;
           } else {
-            update_tech_known = `UPDATE technology_known SET technology_name = '${body.technology_name[i]}', tech_stage = '${tech_stage}' WHERE tech_id = '${tech_id[i]}'`;
+            update_tech_known = `UPDATE technology_known SET technology_name = '${body.technology_name[i]}', tech_stage = ? WHERE tech_id = ?`;
           }
 
-          await con.query(update_tech_known, (err, result16) => {
+          await con.query(update_tech_known, [tech_stage, tech_id[i]], (err, result16) => {
             if (err) throw err;
 
           });
@@ -211,12 +214,12 @@ let update_data_into_job_app = async (req, res) => {
           for (let j = 0; j < lan_can.length; j++) {
 
             if (typeof (lan_can) == "string") {
-              launguage_known_query = `insert into launguage_known (person_id, launguage_name, lan_can) values ('${person_id}', '${each_lang}', '${lan_can}')`;
+              launguage_known_query = `insert into launguage_known (person_id, launguage_name, lan_can) values (?, ?, '${lan_can}')`;
             } else {
-              launguage_known_query = `insert into launguage_known (person_id, launguage_name, lan_can) values ('${person_id}', '${each_lang}', '${lan_can[j]}')`;
+              launguage_known_query = `insert into launguage_known (person_id, launguage_name, lan_can) values (?, ?, '${lan_can[j]}')`;
             }
 
-            await con.query(launguage_known_query, (err, result7) => {
+            await con.query(launguage_known_query, [person_id, each_lang], (err, result7) => {
               if (err) throw err;
 
             });
@@ -229,6 +232,7 @@ let update_data_into_job_app = async (req, res) => {
       res.write("data updated succesfully");
       res.end();
     });
+  } catch (e) { console.log(e); }
 }
 
 module.exports = { display_data, update_data_into_job_app };

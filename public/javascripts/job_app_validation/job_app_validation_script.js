@@ -1,5 +1,6 @@
 
 function form_validation() {
+  try {
 
     let err = [];
 
@@ -30,46 +31,46 @@ function form_validation() {
     // err.push(not_null_validation ('course_name_4','course_name_4_validation'));
 
     if ((!(document.getElementById('board_or_university_4').value == "select_master")) ||
-        (!(document.getElementById('passing_year_4').value.trim() == null || document.getElementById('passing_year_4').value.trim() == "")) ||
-        (!(document.getElementById('percentage_4').value.trim() == null || document.getElementById('percentage_4').value.trim() == ""))) {
+      (!(document.getElementById('passing_year_4').value.trim() == null || document.getElementById('passing_year_4').value.trim() == "")) ||
+      (!(document.getElementById('percentage_4').value.trim() == null || document.getElementById('percentage_4').value.trim() == ""))) {
 
-        err.push(dropdown_validation('board_or_university_4', 'select_master', 'board_or_university_4_validation'));
-        err.push(year_validation_with_regex('passing_year_4', 'passing_year_4_validation'));
-        err.push(percentage_validation_with_regex('percentage_4', 'percentage_4_validation'));
+      err.push(dropdown_validation('board_or_university_4', 'select_master', 'board_or_university_4_validation'));
+      err.push(year_validation_with_regex('passing_year_4', 'passing_year_4_validation'));
+      err.push(percentage_validation_with_regex('percentage_4', 'percentage_4_validation'));
     }
 
 
     if ((!(document.getElementById('company_name_1').value.trim() == null || document.getElementById('company_name_1').value.trim() == "")) ||
-        (!(document.getElementById('past_designation_1').value.trim() == null || document.getElementById('past_designation_1').value.trim() == "")) ||
-        (!(document.getElementById('start_date_1').value.trim() == null || document.getElementById('start_date_1').value.trim() == "")) ||
-        (!(document.getElementById('end_date_1').value.trim() == null || document.getElementById('end_date_1').value.trim() == ""))) {
+      (!(document.getElementById('past_designation_1').value.trim() == null || document.getElementById('past_designation_1').value.trim() == "")) ||
+      (!(document.getElementById('start_date_1').value.trim() == null || document.getElementById('start_date_1').value.trim() == "")) ||
+      (!(document.getElementById('end_date_1').value.trim() == null || document.getElementById('end_date_1').value.trim() == ""))) {
 
-        err.push(not_null_validation('company_name_1', 'company_name_1_validation'));
-        err.push(not_null_validation('past_designation_1', 'past_designation_1_validation'));
-        err.push(date_validation_with_regex('start_date_1', 'start_date_1_validation'));
-        err.push(date_validation_with_regex('end_date_1', 'end_date_1_validation'));
+      err.push(not_null_validation('company_name_1', 'company_name_1_validation'));
+      err.push(not_null_validation('past_designation_1', 'past_designation_1_validation'));
+      err.push(date_validation_with_regex('start_date_1', 'start_date_1_validation'));
+      err.push(date_validation_with_regex('end_date_1', 'end_date_1_validation'));
     }
 
     if ((!(document.getElementById('company_name_2').value.trim() == null || document.getElementById('company_name_2').value.trim() == "")) ||
-        (!(document.getElementById('past_designation_2').value.trim() == null || document.getElementById('past_designation_2').value.trim() == "")) ||
-        (!(document.getElementById('start_date_2').value.trim() == null || document.getElementById('start_date_2').value.trim() == "")) ||
-        (!(document.getElementById('end_date_2').value.trim() == null || document.getElementById('end_date_2').value.trim() == ""))) {
+      (!(document.getElementById('past_designation_2').value.trim() == null || document.getElementById('past_designation_2').value.trim() == "")) ||
+      (!(document.getElementById('start_date_2').value.trim() == null || document.getElementById('start_date_2').value.trim() == "")) ||
+      (!(document.getElementById('end_date_2').value.trim() == null || document.getElementById('end_date_2').value.trim() == ""))) {
 
-        err.push(not_null_validation('company_name_2', 'company_name_2_validation'));
-        err.push(not_null_validation('past_designation_2', 'past_designation_2_validation'));
-        err.push(date_validation_with_regex('start_date_2', 'start_date_2_validation'));
-        err.push(date_validation_with_regex('end_date_2', 'end_date_2_validation'));
+      err.push(not_null_validation('company_name_2', 'company_name_2_validation'));
+      err.push(not_null_validation('past_designation_2', 'past_designation_2_validation'));
+      err.push(date_validation_with_regex('start_date_2', 'start_date_2_validation'));
+      err.push(date_validation_with_regex('end_date_2', 'end_date_2_validation'));
     }
 
     if ((!(document.getElementById('company_name_3').value.trim() == null || document.getElementById('company_name_3').value.trim() == "")) ||
-        (!(document.getElementById('past_designation_3').value.trim() == null || document.getElementById('past_designation_3').value.trim() == "")) ||
-        (!(document.getElementById('start_date_3').value.trim() == null || document.getElementById('start_date_3').value.trim() == "")) ||
-        (!(document.getElementById('end_date_3').value.trim() == null || document.getElementById('end_date_3').value.trim() == ""))) {
+      (!(document.getElementById('past_designation_3').value.trim() == null || document.getElementById('past_designation_3').value.trim() == "")) ||
+      (!(document.getElementById('start_date_3').value.trim() == null || document.getElementById('start_date_3').value.trim() == "")) ||
+      (!(document.getElementById('end_date_3').value.trim() == null || document.getElementById('end_date_3').value.trim() == ""))) {
 
-        err.push(not_null_validation('company_name_3', 'company_name_3_validation'));
-        err.push(not_null_validation('past_designation_3', 'past_designation_3_validation'));
-        err.push(date_validation_with_regex('start_date_3', 'start_date_3_validation'));
-        err.push(date_validation_with_regex('end_date_3', 'end_date_3_validation'));
+      err.push(not_null_validation('company_name_3', 'company_name_3_validation'));
+      err.push(not_null_validation('past_designation_3', 'past_designation_3_validation'));
+      err.push(date_validation_with_regex('start_date_3', 'start_date_3_validation'));
+      err.push(date_validation_with_regex('end_date_3', 'end_date_3_validation'));
     }
 
     err.push(name_validation('ref_name_1', 'ref_name_1_validation'));
@@ -77,12 +78,12 @@ function form_validation() {
     err.push(not_null_validation('ref_relation_1', 'ref_relation_1_validation'));
 
     if ((!(document.getElementById('ref_name_2').value.trim() == null || document.getElementById('ref_name_2').value.trim() == "")) ||
-        (!(document.getElementById('ref_phone_no_2').value.trim() == null || document.getElementById('ref_phone_no_2').value.trim() == "")) ||
-        (!(document.getElementById('ref_relation_2').value.trim() == null || document.getElementById('ref_relation_2').value.trim() == ""))) {
+      (!(document.getElementById('ref_phone_no_2').value.trim() == null || document.getElementById('ref_phone_no_2').value.trim() == "")) ||
+      (!(document.getElementById('ref_relation_2').value.trim() == null || document.getElementById('ref_relation_2').value.trim() == ""))) {
 
-        err.push(name_validation('ref_name_2', 'ref_name_2_validation'));
-        err.push(phone_no_validation_with_regex('ref_phone_no_2', 'ref_phone_no_2_validation'));
-        err.push(not_null_validation('ref_relation_2', 'ref_relation_2_validation'));
+      err.push(name_validation('ref_name_2', 'ref_name_2_validation'));
+      err.push(phone_no_validation_with_regex('ref_phone_no_2', 'ref_phone_no_2_validation'));
+      err.push(not_null_validation('ref_relation_2', 'ref_relation_2_validation'));
     }
 
     err.push(number_validation('notice_period_in_month', 'notice_period_in_month_validation'));
@@ -99,8 +100,8 @@ function form_validation() {
 
     if (((php.checked) && !(tech_stage_1[0].checked || tech_stage_1[1].checked || tech_stage_1[2].checked)) || (!(php.checked) && (tech_stage_1[0].checked || tech_stage_1[1].checked || tech_stage_1[2].checked))) {
 
-        document.getElementById('tech_stage_1_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('tech_stage_1_validation').innerHTML = "select option";
+      return false;
     }
 
     let mysql = document.getElementById('technology_name_2');
@@ -108,8 +109,8 @@ function form_validation() {
 
     if (((mysql.checked) && !(tech_stage_2[0].checked || tech_stage_2[1].checked || tech_stage_2[2].checked)) || (!(mysql.checked) && (tech_stage_2[0].checked || tech_stage_2[1].checked || tech_stage_2[2].checked))) {
 
-        document.getElementById('tech_stage_2_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('tech_stage_2_validation').innerHTML = "select option";
+      return false;
     }
 
     let laravel = document.getElementById('technology_name_3');
@@ -117,8 +118,8 @@ function form_validation() {
 
     if (((laravel.checked) && !(tech_stage_3[0].checked || tech_stage_3[1].checked || tech_stage_3[2].checked)) || (!(laravel.checked) && (tech_stage_3[0].checked || tech_stage_3[1].checked || tech_stage_3[2].checked))) {
 
-        document.getElementById('tech_stage_3_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('tech_stage_3_validation').innerHTML = "select option";
+      return false;
     }
 
     let oracle = document.getElementById('technology_name_4');
@@ -126,10 +127,9 @@ function form_validation() {
 
     if (((oracle.checked) && !(tech_stage_4[0].checked || tech_stage_4[1].checked || tech_stage_4[2].checked)) || (!(oracle.checked) && (tech_stage_4[0].checked || tech_stage_4[1].checked || tech_stage_4[2].checked))) {
 
-        document.getElementById('tech_stage_4_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('tech_stage_4_validation').innerHTML = "select option";
+      return false;
     }
-
 
 
     // for launguage known validation
@@ -139,8 +139,8 @@ function form_validation() {
 
     if (((hindi.checked) && !(lan_hindi[0].checked || lan_hindi[1].checked || lan_hindi[2].checked)) || (!(hindi.checked) && (lan_hindi[0].checked || lan_hindi[1].checked || lan_hindi[2].checked))) {
 
-        document.getElementById('lan_hindi_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('lan_hindi_validation').innerHTML = "select option";
+      return false;
     }
 
     let english = document.getElementById('launguage_name_2');
@@ -148,8 +148,8 @@ function form_validation() {
 
     if (((english.checked) && !(lan_english[0].checked || lan_english[1].checked || lan_english[2].checked)) || (!(english.checked) && (lan_english[0].checked || lan_english[1].checked || lan_english[2].checked))) {
 
-        document.getElementById('lan_english_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('lan_english_validation').innerHTML = "select option";
+      return false;
     }
 
     let gujarati = document.getElementById('launguage_name_3');
@@ -157,197 +157,218 @@ function form_validation() {
 
     if (((gujarati.checked) && !(lan_gujarati[0].checked || lan_gujarati[1].checked || lan_gujarati[2].checked)) || (!(gujarati.checked) && (lan_gujarati[0].checked || lan_gujarati[1].checked || lan_gujarati[2].checked))) {
 
-        document.getElementById('lan_gujarati_validation').innerHTML = "select option";
-        return false;
+      document.getElementById('lan_gujarati_validation').innerHTML = "select option";
+      return false;
     }
-
-
 
 
     if (err.includes(false)) {
-        return false;
+      return false;
     }
 
-
     return true;
+  } catch (e) { console.log(e); }
 }
 
 
 function name_validation(input_id, validation_id) { // where input_id is id of input field and validation_id is id of validation field
+  try {
 
     let first_name = document.getElementById(input_id).value.trim();
     let x_replace = input_id.replace("_", " ");
 
     if (first_name == null || first_name == "") {
-        document.getElementById(validation_id).textContent = x_replace + " can not be blank";
-        return false;
+      document.getElementById(validation_id).textContent = x_replace + " can not be blank";
+      return false;
     }
     else if (!isNaN(first_name)) {
-        document.getElementById(validation_id).textContent = x_replace + " can not be number";
-        return false;
+      document.getElementById(validation_id).textContent = x_replace + " can not be number";
+      return false;
     }
     return true;
+
+  } catch (e) { console.log(e); }
 }
 
 
 function phone_no_validation_with_regex(input_id, validation_id) {
+  try {
 
     let phone_no = document.getElementById(input_id).value.trim();
     let phone_no_regex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 
     if (!phone_no.match(phone_no_regex)) {
-        document.getElementById(validation_id).textContent = "phone no must be 10 digit number";
-        return false;
+      document.getElementById(validation_id).textContent = "phone no must be 10 digit number";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 
 function email_validation_with_regex(input_id, validation_id) {
+  try {
 
     let email = document.getElementById(input_id).value.trim();
     let email_format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (!email.match(email_format)) {
-        document.getElementById(validation_id).textContent = "Enter valid format of email";
-        return false;
+      document.getElementById(validation_id).textContent = "Enter valid format of email";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 
 function gender_validation(male_id, female_id, validation_id) {
+  try {
 
     let male = document.getElementById(male_id);
     let female = document.getElementById(female_id);
 
     if (!(male.checked || female.checked)) {
-        document.getElementById(validation_id).textContent = "any gender is not checked";
-        return false;
+      document.getElementById(validation_id).textContent = "any gender is not checked";
+      return false;
     }
     return true;
-
+  } catch (e) { console.log(e); }
 }
 
 
 function number_validation(input_id, validation_id) {
+  try {
 
     let number = document.getElementById(input_id).value.trim();
     let x_replace = input_id.replace("_", " ");
 
     if (number == null || number == "") {
-        document.getElementById(validation_id).textContent = x_replace + " can not be null";
-        return false;
+      document.getElementById(validation_id).textContent = x_replace + " can not be null";
+      return false;
     }
     else if (isNaN(number)) {
-        document.getElementById(validation_id).textContent = x_replace + " must be number";
-        return false;
+      document.getElementById(validation_id).textContent = x_replace + " must be number";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 };
 
 
 function not_null_validation(input_id, validation_id) {
+  try {
 
     let str = document.getElementById(input_id).value.trim();
     let x_replace = input_id.replace("_", " ");
 
     if (str == null || str == "") {
-        document.getElementById(validation_id).textContent = x_replace + " can not be null";
-        return false;
+      document.getElementById(validation_id).textContent = x_replace + " can not be null";
+      return false;
     }
 
     return true;
+  } catch (e) { console.log(e); }
 }
 
 
 function zipcode_validation(input_id, validation_id) {
+  try {
 
     let zipcode = document.getElementById(input_id).value.trim();
     let zipcode_regex = /^\(?(\d{3})\)?[- ]?(\d{3})$/;
 
     if (!zipcode.match(zipcode_regex)) {
-        document.getElementById(validation_id).textContent = "zipcode must be 6 digit number";
-        return false;
+      document.getElementById(validation_id).textContent = "zipcode must be 6 digit number";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 
 function date_validation_with_regex(input_id, validation_id) {
+  try {
 
     let date = document.getElementById(input_id).value.trim();
     let date_regex = /^\d{4}[./-]\d{2}[./-]\d{2}$/;
 
     if (!date.match(date_regex)) {
-        document.getElementById(validation_id).textContent = "formate must be yyyy-mm-dd";
-        return false;
+      document.getElementById(validation_id).textContent = "formate must be yyyy-mm-dd";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 function year_validation_with_regex(input_id, validation_id) {
+  try {
 
     let year = document.getElementById(input_id).value.trim();
     let year_regex = /^\d{4}$/;
 
     if (!year.match(year_regex)) {
-        document.getElementById(validation_id).textContent = "formate must be yyyy";
-        return false;
+      document.getElementById(validation_id).textContent = "formate must be yyyy";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 function percentage_validation_with_regex(input_id, validation_id) {
+  try {
 
     let percentage = document.getElementById(input_id).value.trim();
     let percentage_regex = /(^100(\.0{1,2})?$)|(^([1-9]([0-9])?|0)(\.[0-9]{1,2})?$)/;
 
     if (!percentage.match(percentage_regex)) {
-        document.getElementById(validation_id).textContent = "formate must be like 00.00";
-        return false;
+      document.getElementById(validation_id).textContent = "formate must be like 00.00";
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 function dropdown_validation(input_id, value, validation_id,) { // value is first option tag value
+  try {
 
-    var select = document.getElementById(input_id);
-    var optionSelIndex = select.options[select.selectedIndex].value;
-    // var optionSelectedText = select.options[select.selectedIndex].text;
+    let select = document.getElementById(input_id);
+    let optionSelIndex = select.options[select.selectedIndex].value;
+    // let optionSelectedText = select.options[select.selectedIndex].text;
     if (optionSelIndex == value) {
-        document.getElementById(validation_id).textContent = "choose value from dropdown"
-        return false;
+      document.getElementById(validation_id).textContent = "choose value from dropdown"
+      return false;
     }
     return true;
+  } catch (e) { console.log(e); }
 }
 
 function add_work_exp() {
+  try {
 
-    var mytable = document.getElementById('work_exp_table');
-    var rows = mytable.rows.length;  
-    var r = mytable.insertRow(rows);  
-    var c1 = r.insertCell(0);  
-    var c2 = r.insertCell(1);  
-    var c3 = r.insertCell(2);  
-    var c4 = r.insertCell(3);  
-    var c5 = r.insertCell(4);  
-    var c6 = r.insertCell(5);  
-    var c7 = r.insertCell(6);  
-    var c8 = r.insertCell(7);  
+    let mytable = document.getElementById('work_exp_table');
+    let rows = mytable.rows.length;
+    let r = mytable.insertRow(rows);
+    let c1 = r.insertCell(0);
+    let c2 = r.insertCell(1);
+    let c3 = r.insertCell(2);
+    let c4 = r.insertCell(3);
+    let c5 = r.insertCell(4);
+    let c6 = r.insertCell(5);
+    let c7 = r.insertCell(6);
+    let c8 = r.insertCell(7);
 
-    var company_label = document.createElement("label");  
-    var company_name = document.createElement("input");  
-    var designation_label = document.createElement("label");  
-    var past_designation = document.createElement("input");  
-    var from_label = document.createElement("label");  
-    var start_date = document.createElement("input");  
-    var to_label = document.createElement("label");  
-    var end_date = document.createElement("input");  
+    let company_label = document.createElement("label");
+    let company_name = document.createElement("input");
+    let designation_label = document.createElement("label");
+    let past_designation = document.createElement("input");
+    let from_label = document.createElement("label");
+    let start_date = document.createElement("input");
+    let to_label = document.createElement("label");
+    let end_date = document.createElement("input");
 
-    company_label.innerHTML = "Company name";  
-    company_name.type = "text";  
-    company_name.name = "company_name";  
+    company_label.innerHTML = "Company name";
+    company_name.type = "text";
+    company_name.name = "company_name";
     designation_label.innerHTML = "Designation";
     past_designation.type = "text";
     past_designation.name = "past_designation";
@@ -358,23 +379,25 @@ function add_work_exp() {
     end_date.type = "text";
     end_date.name = "end_date";
 
-    c1.appendChild(company_label);  
-    c2.appendChild(company_name);  
-    c3.appendChild(designation_label);  
-    c4.appendChild(past_designation);  
-    c5.appendChild(from_label);  
-    c6.appendChild(start_date);  
-    c7.appendChild(to_label);  
-    c8.appendChild(end_date);  
+    c1.appendChild(company_label);
+    c2.appendChild(company_name);
+    c3.appendChild(designation_label);
+    c4.appendChild(past_designation);
+    c5.appendChild(from_label);
+    c6.appendChild(start_date);
+    c7.appendChild(to_label);
+    c8.appendChild(end_date);
 
+  } catch (e) { console.log(e); }
 }
 
 function remove_work_exp() {
+  try {
 
-    var mytable = document.getElementById('work_exp_table');
-    var rows = mytable.rows.length;  
+    let mytable = document.getElementById('work_exp_table');
+    let rows = mytable.rows.length;
     if (rows > 3) {
-        mytable.deleteRow(rows - 1);  
+      mytable.deleteRow(rows - 1);
     }
-
+  } catch (e) { console.log(e); }
 }

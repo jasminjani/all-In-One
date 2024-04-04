@@ -1,60 +1,54 @@
 
 function addrow() {
+  try {
     let mytable = document.getElementById("mytable");
     let rowcount = mytable.rows.length;
     let colCount = mytable.rows[0].cells.length;
     let rows = mytable.insertRow(rowcount);
     for (let i = 0; i < colCount; i++) {
-        let newcell = rows.insertCell(i);
-
-        // let newcell = document.getElementById("mytable").insertRow(document.getElementById("mytable").rows.length).insertCell(i);
+      let newcell = rows.insertCell(i);
     }
-    // let c1 = r.insertCell();
-    // let c2 = r.insertCell();
-    // c1.appendChild(rows);  
+
+  } catch (e) { console.log(e); }
 }
 
 function deleterow() {
+  try {
     let mytable = document.getElementById("mytable");
     let rowscount = mytable.rows.length;
     if (rowscount > 2) {
-        let i = rowscount - 1;
-        mytable.deleteRow(i);
+      let i = rowscount - 1;
+      mytable.deleteRow(i);
     }
+  } catch (e) { console.log(e); }
 }
 
 function addcolumn() {
+  try {
     let mytable = document.getElementById("mytable");
     let colcount = mytable.rows[0].cells.length;
-    // let rowcount = mytable.rows.length;
     let rowcount = mytable.rows
 
-    // let columns = mytable.insertColumn(colcount);
     let newcell;
     for (let i = 0; i < rowcount.length; i++) {
-        newcell = rowcount[i].insertCell(colcount);
-
-        //  newcell = columns.insertCell(i);
+      newcell = rowcount[i].insertCell(colcount);
     }
 
+  } catch (e) { console.log(e); }
 }
 
 function deletecolumn() {
+  try {
     let mytable = document.getElementById("mytable");
     let rowcount = mytable.rows.length;
     let columns = mytable.rows[0].cells.length;
 
-    // let index = 2;
     if (columns > 2) {
 
-        for (var i = 0; i < rowcount; i++) {
-            mytable.rows[i].deleteCell(-1);
-        }
+      for (let i = 0; i < rowcount; i++) {
+        mytable.rows[i].deleteCell(-1);
+      }
     }
 
-    // if (columns > 2) {
-    //     mytable.deleteCell(columns - 1);
-    //     mytable.rows[i].deleteCell()
-    //     table.rows[i].deleteCell(temp2-1);
-    // }
+  } catch (e) { console.log(e); }
 }

@@ -23,7 +23,7 @@ const { login, check_login } = require('../controller/index/login');
 const { dashboard, logout } = require('../controller/index/dashboard');
 const { registration, check_registrartion } = require('../controller/index/registration');
 const { create_password, forgot_password, update_password, login_forgot_password } = require('../controller/index/password');
-
+const error = require('../controller/error/error');
 
 
 router.route('/').get(registration)
@@ -66,5 +66,7 @@ router.route('/ajax_step_job_app_form/update/:id').get(isAuthorization, update_d
 router.route('/timezone_converter').get(isAuthorization, timezone_converter)
 router.route('/timezone_converter/country').get(isAuthorization, country)
 router.route('/timezone_converter/city').get(isAuthorization, cities)
+
+router.route('*').get(error)
 
 module.exports = router;

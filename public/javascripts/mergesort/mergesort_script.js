@@ -1,63 +1,69 @@
-      // var city = ["ahmedabad", "gandhinagar", "junagadh", "rajkot", "gir somnath", "surat", "bhavnagar", "jamnagar"];
+// let city = ["ahmedabad", "gandhinagar", "junagadh", "rajkot", "gir somnath", "surat", "bhavnagar", "jamnagar"];
 
-        // var arr = [25,45,36,7,20,1,63,8];
+// let arr = [25,45,36,7,20,1,63,8];
 
-        function sort (arr) {
+function sort(arr) {
+  try {
 
-            arr = arr.split(',')
-            console.log(arr);
+    arr = arr.split(',')
 
-             let arr2 = []
-            var sorted_arr = [];
+    let arr2 = []
+    let sorted_arr = [];
 
-               if(parseInt(arr[0])){
-                    arr.forEach(element => {
-                    arr2.push(parseInt(element));
-                });
-                
-                sorted_arr = mergesort(arr2);
-            }
-            else{
+    if (parseInt(arr[0])) {
+      arr.forEach(element => {
+        arr2.push(parseInt(element));
+      });
 
-                sorted_arr =  mergesort(arr);
-            }
-               
-            document.getElementById('answer').innerHTML = sorted_arr;
+      sorted_arr = mergesort(arr2);
+    }
+    else {
 
-        }
+      sorted_arr = mergesort(arr);
+    }
 
-        function mergesort(arr) {
+    document.getElementById('answer').innerHTML = sorted_arr;
 
-            if(arr.length <=1) {
-                return arr;
-            }
+  } catch (e) { console.log(e); }
+}
 
-            const mid = Math.floor(arr.length/2);
+function mergesort(arr) {
+  try {
 
-            const leftarr = arr.slice(0,mid);
-            const rightarr = arr.slice(mid);
+    if (arr.length <= 1) {
+      return arr;
+    }
 
-           return merge(mergesort(leftarr),mergesort(rightarr));
+    const mid = Math.floor(arr.length / 2);
 
-        }
+    const leftarr = arr.slice(0, mid);
+    const rightarr = arr.slice(mid);
 
-        function merge(leftarr,rightarr) {
-            var leftindex = 0;
-            var rightindex = 0;
-            var resultarr = [];
+    return merge(mergesort(leftarr), mergesort(rightarr));
 
-            while((leftindex < leftarr.length) && (rightindex < rightarr.length)) {
+  } catch (e) { console.log(e); }
+}
 
-                if (leftarr[leftindex] < rightarr[rightindex]) {
-                    resultarr.push(leftarr[leftindex]);
-                    leftindex++;    
-                }
-                else{
-                    resultarr.push(rightarr[rightindex]);
-                    rightindex++;
-                }
-            }
+function merge(leftarr, rightarr) {
+  try {
 
-            return resultarr.concat(leftarr.slice(leftindex),rightarr.slice(rightindex));
+    let leftindex = 0;
+    let rightindex = 0;
+    let resultarr = [];
 
-        }
+    while ((leftindex < leftarr.length) && (rightindex < rightarr.length)) {
+
+      if (leftarr[leftindex] < rightarr[rightindex]) {
+        resultarr.push(leftarr[leftindex]);
+        leftindex++;
+      }
+      else {
+        resultarr.push(rightarr[rightindex]);
+        rightindex++;
+      }
+    }
+
+    return resultarr.concat(leftarr.slice(leftindex), rightarr.slice(rightindex));
+
+  } catch (e) { console.log(e); }
+}
