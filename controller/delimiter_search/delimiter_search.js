@@ -8,8 +8,8 @@ let delimiter_search = (req, res) => {
     if (input == undefined) {
       input = ""
     }
-
-    let str = input.replaceAll("_", "&_").replaceAll("^", "&^").replaceAll("$", "&$").replaceAll("}", "&}").replaceAll("{", "&{").replaceAll(":", "&:").split('&');
+    let trim_input = input.trim();
+    let str = trim_input.replaceAll("_", "&_").replaceAll("^", "&^").replaceAll("$", "&$").replaceAll("}", "&}").replaceAll("{", "&{").replaceAll(":", "&:").split('&');
 
     str.shift(); // because first element of array is null
 
@@ -25,34 +25,33 @@ let delimiter_search = (req, res) => {
 
       switch (del) {
         case "_":
-          first_name.push(element.slice(1, element.length))
+          first_name.push(element.slice(1, element.length).trim())
           break;
 
         case "^":
-          last_name.push(element.slice(1, element.length))
+          last_name.push(element.slice(1, element.length).trim())
           break;
 
         case "$":
-          email.push(element.slice(1, element.length))
+          email.push(element.slice(1, element.length).trim())
           break;
 
         case "}":
-          dob.push(element.slice(1, element.length))
+          dob.push(element.slice(1, element.length).trim())
           break;
 
         case "{":
-          phone_no.push(element.slice(1, element.length))
+          phone_no.push(element.slice(1, element.length).trim())
           break;
 
         case ":":
-          city.push(element.slice(1, element.length))
+          city.push(element.slice(1, element.length).trim())
           break;
 
         default:
           break;
       }
     });
-
 
     let select = `SELECT * FROM student_master_2 WHERE ( `
     if (first_name.length > 0) {

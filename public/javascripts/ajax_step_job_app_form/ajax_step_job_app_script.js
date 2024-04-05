@@ -54,7 +54,7 @@ async function ajax1_fetch() {
     let curr_url = window.location.href.split('/');
     curr_url.pop();
     let url_contain = curr_url.pop();
-    if (url_contain == "localhost:9027") {
+    if (url_contain == "ajax_step_job_app_form") {
       url = "http://localhost:9027/ajax_step_job_app_form/post";
     }
     else if (url_contain == "update") {
